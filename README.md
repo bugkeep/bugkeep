@@ -1,8 +1,8 @@
-<br />
+<div align="center">
 
-![header](https://capsule-render.vercel.app/api?type=waving&height=230&section=header&color=0:0f172a,45:0ea5e9,100:22c55e&text=bugkeep&fontColor=ffffff&fontSize=72&fontAlignY=36&animation=fadeIn&desc=CS%20grad%20student%20%7C%20AI%20agent%20builder%20%7C%20bug%20keeper&descAlignY=58&descSize=18)
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=210&section=header&color=0:0f172a,45:0ea5e9,100:22c55e&text=bugkeep&fontColor=ffffff&fontSize=66&fontAlignY=36&animation=fadeIn&desc=CS%20grad%20student%20%7C%20AI%20agent%20builder%20%7C%20bug%20keeper&descAlignY=58&descSize=18" alt="bugkeep header" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2600&pause=800&color=38BDF8&center=true&vCenter=true&width=900&lines=I+build+bots+that+actually+use+tools.;I+like+small+reproducible+fixes.;I+turn+weird+bugs+into+clean+PRs.)](https://git.io/typing-svg)
+<img width="82%" src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2600&pause=800&color=38BDF8&center=true&vCenter=true&width=900&lines=I+build+bots+that+actually+use+tools.;I+like+small+reproducible+fixes.;I+turn+weird+bugs+into+clean+PRs." alt="dynamic intro ticker" />
 
 [![Profile Views](https://komarev.com/ghpvc/?username=bugkeep&style=for-the-badge&color=0ea5e9)](https://github.com/bugkeep)
 [![GitHub followers](https://img.shields.io/github/followers/bugkeep?style=for-the-badge&logo=github&color=22c55e)](https://github.com/bugkeep?tab=followers)
@@ -14,10 +14,11 @@
 
 <div align="center">
 
-## Live Dashboard
+<h2>Live Dashboard</h2>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=1800&pause=400&color=22C55E&center=true&vCenter=true&width=760&lines=tool+calling+%2F+MCP+%2F+automation+%2F+agents;Python+backend+%2B+TypeScript+frontend;reproduce+%E2%86%92+patch+%E2%86%92+test+%E2%86%92+ship" alt="dynamic stack ticker" />
+<img width="82%" src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=1800&pause=400&color=22C55E&center=true&vCenter=true&width=820&lines=tool+calling+%2F+MCP+%2F+automation+%2F+agents;Python+backend+%2B+TypeScript+frontend;reproduce+%E2%86%92+patch+%E2%86%92+test+%E2%86%92+ship" alt="dynamic stack ticker" />
 
+<br />
 <br />
 
 <picture>
@@ -29,12 +30,20 @@
 <br />
 <br />
 
-<img height="185" src="https://github-readme-stats.vercel.app/api?username=bugkeep&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show=reviews,prs_merged,prs_merged_percentage&bg_color=0d1117&title_color=38bdf8&icon_color=22c55e&text_color=c9d1d9" alt="dynamic GitHub stats" />
-<img height="185" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bugkeep&layout=compact&langs_count=10&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=c9d1d9" alt="dynamic language stats" />
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img width="100%" src="https://github-readme-stats.vercel.app/api?username=bugkeep&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show=reviews,prs_merged,prs_merged_percentage&bg_color=0d1117&title_color=38bdf8&icon_color=22c55e&text_color=c9d1d9" alt="dynamic GitHub stats" />
+    </td>
+    <td width="50%" align="center">
+      <img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bugkeep&layout=compact&langs_count=10&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=c9d1d9" alt="dynamic language stats" />
+    </td>
+  </tr>
+</table>
 
 <br />
 
-<img width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=bugkeep&theme=tokyo-night&hide_border=true&area=true&radius=16&height=320&line=22c55e&point=38bdf8&area_color=0ea5e9&title_color=38bdf8&custom_title=Contribution%20Radar%20%2F%20Live%20Activity" alt="dynamic contribution radar" />
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=bugkeep&theme=tokyo-night&hide_border=true&area=true&radius=16&height=320&line=22c55e&point=38bdf8&area_color=0ea5e9&title_color=38bdf8&custom_title=Contribution%20Radar%20%2F%20Live%20Activity" alt="dynamic contribution radar" />
 
 </div>
 
