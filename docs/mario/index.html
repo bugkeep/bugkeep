@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mushroom Dash</title>
+    <style>
+      :root {
+        --sky: #7dd3fc;
+        --sky-deep: #38bdf8;
+        --ink: #172033;
+        --brick: #c65f2f;
+        --coin: #facc15;
+        --grass: #22c55e;
+        --pipe: #16a34a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        align-items: center;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.95), transparent 11rem),
+          linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 54%, #86efac 54%, #22c55e 100%);
+        color: var(--ink);
+        display: flex;
+        font-family: "Courier New", monospace;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.22);
+        border: 5px solid #111827;
+        box-shadow: 12px 12px 0 #111827;
+        max-width: 960px;
+        padding: 18px;
+        width: 100%;
+      }
+
+      header {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 5vw, 52px);
+        letter-spacing: -2px;
+        margin: 0;
+        text-shadow: 3px 3px 0 #fef08a;
+      }
+
+      .hint {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+        text-align: right;
+      }
+
+      canvas {
+        background: linear-gradient(#7dd3fc 0 62%, #4ade80 62% 100%);
+        border: 5px solid #111827;
+        display: block;
+        image-rendering: pixelated;
+        width: 100%;
+      }
+
+      .controls {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 14px;
+      }
+
+      button {
+        background: #facc15;
+        border: 4px solid #111827;
+        box-shadow: 5px 5px 0 #111827;
+        color: #111827;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 900;
+        padding: 12px;
+        text-transform: uppercase;
+      }
+
+      button:active {
+        box-shadow: 1px 1px 0 #111827;
+        transform: translate(4px, 4px);
+      }
+
+      @media (max-width: 640px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hint {
+          text-align: left;
+        }
+
+        .controls {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Mushroom Dash</h1>
+        <p class="hint">Run: A / D or arrows<br />Jump: W / Space<br />Restart: R</p>
+      </header>
+      <canvas id="game" width="960" height="540" aria-label="Pixel platform mini game"></canvas>
+      <div class="controls">
+        <button id="left">Left</button>
+        <button id="jump">Jump</button>
+        <button id="right">Right</button>
+      </div>
+    </main>
+
+    <script>
+      const canvas = document.querySelector("#game");
+      const ctx = canvas.getContext("2d");
+      const keys = new Set();
+      const world = {
+        gravity: 0.62,
+        floor: 438,
+        camera: 0,
+        width: 3400,
+      };
+      const player = {
+        x: 80,
+        y: 320,
+        w: 34,
+        h: 46,
+        vx: 0,
+        vy: 0,
+        grounded: false,
+        coins: 0,
+        dead: false,
+        won: false,
+      };
+      const blocks = [
+        { x: 0, y: 480, w: 3600, h: 80, type: "ground" },
+        { x: 340, y: 360, w: 140, h: 34, type: "brick" },
+        { x: 610, y: 305, w: 180, h: 34, type: "brick" },
+        { x: 960, y: 365, w: 120, h: 34, type: "brick" },
+        { x: 1290, y: 312, w: 180, h: 34, type: "brick" },
+        { x: 1700, y: 360, w: 140, h: 34, type: "brick" },
+        { x: 2130, y: 310, w: 200, h: 34, type: "brick" },
+        { x: 2620, y: 360, w: 160, h: 34, type: "brick" },
+        { x: 720, y: 410, w: 76, h: 70, type: "pipe" },
+        { x: 1510, y: 390, w: 86, h: 90, type: "pipe" },
+        { x: 2390, y: 410, w: 86, h: 70, type: "pipe" },
+      ];
+      const coins = [
+        { x: 378, y: 318 }, { x: 656, y: 262 }, { x: 718, y: 262 },
+        { x: 1010, y: 320 }, { x: 1340, y: 268 }, { x: 1770, y: 318 },
+        { x: 2200, y: 266 }, { x: 2260, y: 266 }, { x: 2700, y: 316 },
+      ].map((coin) => ({ ...coin, taken: false }));
+      const enemies = [
+        { x: 520, y: 442, w: 34, h: 38, vx: -1.1 },
+        { x: 1160, y: 442, w: 34, h: 38, vx: 1.1 },
+        { x: 2020, y: 442, w: 34, h: 38, vx: -1.25 },
+      ];
+      const flag = { x: 3180, y: 232, w: 26, h: 248 };
+
+      function reset() {
+        Object.assign(player, {
+          x: 80,
+          y: 320,
+          w: 34,
+          h: 46,
+          vx: 0,
+          vy: 0,
+          grounded: false,
+          coins: 0,
+          dead: false,
+          won: false,
+        });
+        world.camera = 0;
+        coins.forEach((coin) => {
+          coin.taken = false;
+        });
+      }
+
+      function overlaps(a, b) {
+        return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+      }
+
+      function moveAndCollide() {
+        player.x += player.vx;
+        for (const block of blocks) {
+          if (!overlaps(player, block)) continue;
+          if (player.vx > 0) player.x = block.x - player.w;
+          if (player.vx < 0) player.x = block.x + block.w;
+          player.vx = 0;
+        }
+
+        player.y += player.vy;
+        player.grounded = false;
+        for (const block of blocks) {
+          if (!overlaps(player, block)) continue;
+          if (player.vy > 0) {
+            player.y = block.y - player.h;
+            player.grounded = true;
+          } else if (player.vy < 0) {
+            player.y = block.y + block.h;
+          }
+          player.vy = 0;
+        }
+      }
+
+      function update() {
+        if (keys.has("r")) reset();
+        if (player.dead || player.won) return;
+
+        const left = keys.has("ArrowLeft") || keys.has("a");
+        const right = keys.has("ArrowRight") || keys.has("d");
+        const jump = keys.has("ArrowUp") || keys.has("w") || keys.has(" ");
+        player.vx *= 0.82;
+        if (left) player.vx -= 0.72;
+        if (right) player.vx += 0.72;
+        player.vx = Math.max(-6, Math.min(6, player.vx));
+        if (jump && player.grounded) {
+          player.vy = -13.5;
+          player.grounded = false;
+        }
+        player.vy += world.gravity;
+        moveAndCollide();
+
+        for (const enemy of enemies) {
+          enemy.x += enemy.vx;
+          if (enemy.x < 420 || enemy.x > 2380) enemy.vx *= -1;
+          if (!overlaps(player, enemy)) continue;
+          if (player.vy > 1 && player.y + player.h - enemy.y < 18) {
+            enemy.x = -999;
+            player.vy = -9;
+          } else {
+            player.dead = true;
+          }
+        }
+
+        for (const coin of coins) {
+          if (!coin.taken && overlaps(player, { x: coin.x - 12, y: coin.y - 12, w: 24, h: 24 })) {
+            coin.taken = true;
+            player.coins += 1;
+          }
+        }
+
+        if (player.x > flag.x - 20) player.won = true;
+        if (player.y > 620) player.dead = true;
+        world.camera = Math.max(0, Math.min(world.width - canvas.width, player.x - 320));
+      }
+
+      function rect(x, y, w, h, color) {
+        ctx.fillStyle = color;
+        ctx.fillRect(Math.round(x - world.camera), Math.round(y), Math.round(w), Math.round(h));
+      }
+
+      function drawCloud(x, y) {
+        x -= world.camera * 0.35;
+        ctx.fillStyle = "rgba(255,255,255,.9)";
+        ctx.fillRect(x, y + 20, 112, 28);
+        ctx.fillRect(x + 22, y, 44, 52);
+        ctx.fillRect(x + 58, y + 8, 42, 44);
+      }
+
+      function drawPlayer() {
+        const x = player.x - world.camera;
+        ctx.fillStyle = "#ef4444";
+        ctx.fillRect(x + 5, player.y, 24, 11);
+        ctx.fillStyle = "#f97316";
+        ctx.fillRect(x + 7, player.y + 11, 20, 16);
+        ctx.fillStyle = "#2563eb";
+        ctx.fillRect(x + 4, player.y + 26, 26, 20);
+        ctx.fillStyle = "#111827";
+        ctx.fillRect(x + 23, player.y + 15, 5, 5);
+      }
+
+      function drawEnemy(enemy) {
+        const x = enemy.x - world.camera;
+        ctx.fillStyle = "#7c2d12";
+        ctx.fillRect(x, enemy.y + 14, enemy.w, 24);
+        ctx.fillStyle = "#a16207";
+        ctx.fillRect(x + 4, enemy.y, 26, 18);
+        ctx.fillStyle = "#111827";
+        ctx.fillRect(x + 7, enemy.y + 16, 5, 5);
+        ctx.fillRect(x + 22, enemy.y + 16, 5, 5);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawCloud(120, 58);
+        drawCloud(760, 82);
+        drawCloud(1430, 44);
+        drawCloud(2240, 76);
+
+        blocks.forEach((block) => {
+          const color = block.type === "pipe" ? "#16a34a" : block.type === "brick" ? "#c65f2f" : "#92400e";
+          rect(block.x, block.y, block.w, block.h, color);
+          if (block.type === "brick") {
+            for (let x = block.x; x < block.x + block.w; x += 34) rect(x, block.y + 14, 26, 4, "#7c2d12");
+          }
+          if (block.type === "pipe") rect(block.x - 10, block.y, block.w + 20, 18, "#22c55e");
+        });
+
+        coins.forEach((coin) => {
+          if (coin.taken) return;
+          ctx.fillStyle = "#facc15";
+          ctx.fillRect(coin.x - world.camera - 9, coin.y - 12, 18, 24);
+          ctx.fillStyle = "#fde68a";
+          ctx.fillRect(coin.x - world.camera - 2, coin.y - 7, 4, 14);
+        });
+
+        enemies.forEach((enemy) => {
+          if (enemy.x > 0) drawEnemy(enemy);
+        });
+
+        rect(flag.x, flag.y, flag.w, flag.h, "#111827");
+        rect(flag.x + flag.w, flag.y, 108, 58, "#ef4444");
+        rect(flag.x + flag.w + 14, flag.y + 14, 64, 12, "#fef08a");
+        drawPlayer();
+
+        ctx.fillStyle = "#111827";
+        ctx.font = "bold 24px Courier New";
+        ctx.fillText(`COINS ${String(player.coins).padStart(2, "0")}`, 24, 38);
+        ctx.fillText(`X ${Math.floor(player.x)}`, 790, 38);
+        if (player.dead || player.won) {
+          ctx.fillStyle = "rgba(17,24,39,.86)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = player.won ? "#22c55e" : "#facc15";
+          ctx.font = "bold 54px Courier New";
+          ctx.textAlign = "center";
+          ctx.fillText(player.won ? "YOU SHIPPED IT" : "BONKED", canvas.width / 2, 248);
+          ctx.fillStyle = "#fff";
+          ctx.font = "bold 22px Courier New";
+          ctx.fillText("Press R to restart", canvas.width / 2, 292);
+          ctx.textAlign = "left";
+        }
+      }
+
+      function frame() {
+        update();
+        draw();
+        requestAnimationFrame(frame);
+      }
+
+      document.addEventListener("keydown", (event) => keys.add(event.key));
+      document.addEventListener("keyup", (event) => keys.delete(event.key));
+      for (const [id, key] of [["left", "ArrowLeft"], ["right", "ArrowRight"], ["jump", " "]]) {
+        const button = document.querySelector(`#${id}`);
+        button.addEventListener("pointerdown", () => keys.add(key));
+        button.addEventListener("pointerup", () => keys.delete(key));
+        button.addEventListener("pointerleave", () => keys.delete(key));
+      }
+      frame();
+    </script>
+  </body>
+</html>

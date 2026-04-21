@@ -49,6 +49,20 @@
 
 ---
 
+<div align="center">
+
+<h2>Mini Game Cartridge</h2>
+
+<a href="https://bugkeep.github.io/bugkeep/mario/">
+  <img width="100%" src="./assets/mushroom-dash-card.svg" alt="Play Mushroom Dash" />
+</a>
+
+<p><b>README cannot run JavaScript directly, so the cartridge opens a tiny pixel platformer on GitHub Pages.</b></p>
+
+</div>
+
+---
+
 <table>
   <tr>
     <td width="52%">
