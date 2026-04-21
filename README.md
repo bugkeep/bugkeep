@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="./assets/avatar-bugkeep.png" width="132" height="132" alt="bugkeep avatar" />
+
+<br />
+
 ![header](https://capsule-render.vercel.app/api?type=waving&height=230&section=header&color=0:0f172a,45:0ea5e9,100:22c55e&text=bugkeep&fontColor=ffffff&fontSize=72&fontAlignY=36&animation=fadeIn&desc=CS%20grad%20student%20%7C%20AI%20agent%20builder%20%7C%20bug%20keeper&descAlignY=58&descSize=18)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2600&pause=800&color=38BDF8&center=true&vCenter=true&width=900&lines=I+build+bots+that+actually+use+tools.;I+like+small+reproducible+fixes.;I+turn+weird+bugs+into+clean+PRs.)](https://git.io/typing-svg)
