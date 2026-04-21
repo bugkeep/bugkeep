@@ -1,7 +1,3 @@
-<div align="center">
-
-<img src="./assets/avatar-bugkeep.png" width="132" height="132" alt="bugkeep avatar" />
-
 <br />
 
 ![header](https://capsule-render.vercel.app/api?type=waving&height=230&section=header&color=0:0f172a,45:0ea5e9,100:22c55e&text=bugkeep&fontColor=ffffff&fontSize=72&fontAlignY=36&animation=fadeIn&desc=CS%20grad%20student%20%7C%20AI%20agent%20builder%20%7C%20bug%20keeper&descAlignY=58&descSize=18)
