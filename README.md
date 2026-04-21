@@ -12,6 +12,34 @@
 
 ---
 
+<div align="center">
+
+## Live Dashboard
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=1800&pause=400&color=22C55E&center=true&vCenter=true&width=760&lines=tool+calling+%2F+MCP+%2F+automation+%2F+agents;Python+backend+%2B+TypeScript+frontend;reproduce+%E2%86%92+patch+%E2%86%92+test+%E2%86%92+ship" alt="dynamic stack ticker" />
+
+<br />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,ts,js,react,vue,nodejs,fastapi,docker,linux,git,github,postgres,redis,pytorch,vscode,bash&theme=dark&perline=8" />
+  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python,ts,js,react,vue,nodejs,fastapi,docker,linux,git,github,postgres,redis,pytorch,vscode,bash&theme=light&perline=8" />
+  <img src="https://skillicons.dev/icons?i=python,ts,js,react,vue,nodejs,fastapi,docker,linux,git,github,postgres,redis,pytorch,vscode,bash&theme=dark&perline=8" alt="dynamic tech stack icons" />
+</picture>
+
+<br />
+<br />
+
+<img height="185" src="https://github-readme-stats.vercel.app/api?username=bugkeep&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show=reviews,prs_merged,prs_merged_percentage&bg_color=0d1117&title_color=38bdf8&icon_color=22c55e&text_color=c9d1d9" alt="dynamic GitHub stats" />
+<img height="185" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bugkeep&layout=compact&langs_count=10&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=c9d1d9" alt="dynamic language stats" />
+
+<br />
+
+<img width="94%" src="https://github-readme-activity-graph.vercel.app/graph?username=bugkeep&theme=tokyo-night&hide_border=true&area=true&radius=16&height=320&line=22c55e&point=38bdf8&area_color=0ea5e9&title_color=38bdf8&custom_title=Contribution%20Radar%20%2F%20Live%20Activity" alt="dynamic contribution radar" />
+
+</div>
+
+---
+
 <table>
   <tr>
     <td width="52%">
@@ -28,26 +56,14 @@
       </ul>
     </td>
     <td width="48%">
-      <h3>Stack</h3>
-      <p align="center">
-        <img src="https://skillicons.dev/icons?i=python,ts,js,react,vue,nodejs,fastapi,docker,linux,git,github,postgres,redis,pytorch&perline=7" alt="tech stack" />
+      <h3>Mode</h3>
+      <p>
+        Small fixes, sharp tools, clean upstream PRs. If a bug can be reduced to
+        a failing test, it is already halfway cooked.
       </p>
     </td>
   </tr>
 </table>
-
----
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=bugkeep&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bugkeep&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
-
-<br />
-
-<img width="92%" src="https://github-readme-activity-graph.vercel.app/graph?username=bugkeep&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Radar" alt="Contribution graph" />
-
-</div>
 
 ---
 
