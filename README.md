@@ -66,6 +66,8 @@
 - [bugkeep/tower-vib#6](https://github.com/bugkeep/tower-vib/pull/6) — feat:Add env dump scrip and requirements generator (merged 2026-01-17)
 - [bugkeep/tower-vib#5](https://github.com/bugkeep/tower-vib/pull/5) — Update README.md (merged 2026-01-16)
 - [bugkeep/tower-vib#3](https://github.com/bugkeep/tower-vib/pull/3) — Feat/2026 1 15：Extract ROI video and cache (video → ROI → npz) (merged 2026-01-16)
+- [bugkeep/tower-vib#4](https://github.com/bugkeep/tower-vib/pull/4) — Feat/roi mean curve (merged 2026-01-16)
+- [bugkeep/tower-vib#2](https://github.com/bugkeep/tower-vib/pull/2) — Feat/2026 1 13 roi cache (merged 2026-01-13)
 <!--END_SECTION:merged_prs-->
 
 ---
