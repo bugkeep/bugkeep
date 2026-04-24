@@ -1,0 +1,113 @@
+name: Update merged PRs
+
+on:
+  schedule:
+    # GitHub Actions cron is UTC. 16:10 UTC == 00:10 (Asia/Shanghai).
+    - cron: "10 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-merged-prs
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Render README section
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const author = owner;
+
+            const markerStart = "<!--START_SECTION:merged_prs-->";
+            const markerEnd = "<!--END_SECTION:merged_prs-->";
+
+            const q = `is:pr author:${author} is:merged -repo:${owner}/${repo}`;
+
+            const search = await github.rest.search.issuesAndPullRequests({
+              q,
+              sort: "updated",
+              order: "desc",
+              per_page: 20,
+            });
+
+            const results = [];
+            for (const item of search.data.items) {
+              const match = item.html_url.match(
+                /github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/
+              );
+              if (!match) continue;
+              const prOwner = match[1];
+              const prRepo = match[2];
+              const prNumber = Number(match[3]);
+              if (!Number.isFinite(prNumber)) continue;
+              if (`${prOwner}/${prRepo}` === `${owner}/${repo}`) continue;
+
+              const pr = await github.rest.pulls.get({
+                owner: prOwner,
+                repo: prRepo,
+                pull_number: prNumber,
+              });
+              if (!pr.data.merged_at) continue;
+
+              results.push({
+                repo: `${prOwner}/${prRepo}`,
+                number: prNumber,
+                title: String(pr.data.title || "").replace(/\r?\n/g, " ").trim(),
+                url: item.html_url,
+                mergedAt: pr.data.merged_at,
+              });
+
+              if (results.length >= 10) break;
+            }
+
+            results.sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
+
+            const lines =
+              results.length > 0
+                ? results.map((p) => {
+                    const date = String(p.mergedAt).slice(0, 10);
+                    return `- [${p.repo}#${p.number}](${p.url}) — ${p.title} (merged ${date})`;
+                  })
+                : ["- _(no merged PRs found)_"];
+
+            const readmePath = "README.md";
+            const readme = fs.readFileSync(readmePath, "utf8");
+            const startIdx = readme.indexOf(markerStart);
+            const endIdx = readme.indexOf(markerEnd);
+            if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
+              core.setFailed("README markers not found or invalid.");
+              return;
+            }
+
+            const before = readme.slice(0, startIdx + markerStart.length);
+            const after = readme.slice(endIdx);
+            const next = `${before}\n${lines.join("\n")}\n${after}`;
+            fs.writeFileSync(readmePath, next, "utf8");
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+          git commit -m "docs: update merged PRs"
+          git push
+
