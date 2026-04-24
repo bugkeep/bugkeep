@@ -51,6 +51,27 @@
 
 <div align="center">
 
+<h2>Recent Merged PRs</h2>
+
+<p><sub>Auto-updated daily via GitHub Actions.</sub></p>
+
+</div>
+
+<!--START_SECTION:merged_prs-->
+- [AstrBotDevs/AstrBot#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) — fix: prevent path traversal in file uploads (merged 2026-04-24)
+- [bugkeep/tower-vib#10](https://github.com/bugkeep/tower-vib/pull/10) — feat(sanity-check):add adaptive curve jump detection and robust repor… (merged 2026-01-20)
+- [bugkeep/tower-vib#9](https://github.com/bugkeep/tower-vib/pull/9) — Update README.md (merged 2026-01-19)
+- [bugkeep/tower-vib#8](https://github.com/bugkeep/tower-vib/pull/8) — feat(env): implement env_manager CLI (dump/check/compare/report) (merged 2026-01-19)
+- [bugkeep/tower-vib#7](https://github.com/bugkeep/tower-vib/pull/7) — feat(env): add dependency checker and integrate into pipeline (merged 2026-01-18)
+- [bugkeep/tower-vib#6](https://github.com/bugkeep/tower-vib/pull/6) — feat:Add env dump scrip and requirements generator (merged 2026-01-17)
+- [bugkeep/tower-vib#5](https://github.com/bugkeep/tower-vib/pull/5) — Update README.md (merged 2026-01-16)
+- [bugkeep/tower-vib#3](https://github.com/bugkeep/tower-vib/pull/3) — Feat/2026 1 15：Extract ROI video and cache (video → ROI → npz) (merged 2026-01-16)
+<!--END_SECTION:merged_prs-->
+
+---
+
+<div align="center">
+
 <h2>Mini Game Cartridge</h2>
 
 <a href="https://bugkeep.github.io/bugkeep/mario/">
