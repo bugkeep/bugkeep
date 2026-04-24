@@ -33,7 +33,9 @@ jobs:
             const markerStart = "<!--START_SECTION:merged_prs-->";
             const markerEnd = "<!--END_SECTION:merged_prs-->";
 
-            const q = `is:pr author:${author} is:merged -repo:${owner}/${repo}`;
+            // Exclude PRs merged into repos you own (`user:<owner>`), so the list highlights upstream contributions.
+            // "user:" search qualifier targets repositories owned by a user or org.
+            const q = `is:pr author:${author} is:merged -user:${author} -repo:${owner}/${repo}`;
 
             const search = await github.rest.search.issuesAndPullRequests({
               q,
@@ -52,7 +54,8 @@ jobs:
               const prRepo = match[2];
               const prNumber = Number(match[3]);
               if (!Number.isFinite(prNumber)) continue;
-              if (`${prOwner}/${prRepo}` === `${owner}/${repo}`) continue;
+              // Double-safety: even if search qualifiers change, keep excluding repos you own.
+              if (String(prOwner).toLowerCase() === String(owner).toLowerCase()) continue;
 
               const pr = await github.rest.pulls.get({
                 owner: prOwner,
