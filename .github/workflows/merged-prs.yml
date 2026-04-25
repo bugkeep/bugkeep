@@ -81,7 +81,7 @@ jobs:
               results.length > 0
                 ? results.map((p) => {
                     const date = String(p.mergedAt).slice(0, 10);
-                    return `- [${p.repo}#${p.number}](${p.url}) — ${p.title} (merged ${date})`;
+                    return `- [${p.repo}#${p.number}](${p.url}) - ${p.title} (merged ${date})`;
                   })
                 : ["- _(no merged PRs found)_"];
 
