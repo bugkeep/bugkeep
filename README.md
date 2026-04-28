@@ -35,7 +35,8 @@ I am focusing my public work around three connected areas:
 Auto-updated daily from upstream repositories.
 
 <!--START_SECTION:merged_prs-->
-- _(no merged PRs found)_
+- [AstrBotDevs/AstrBot#7807](https://github.com/AstrBotDevs/AstrBot/pull/7807) - fix(core): downscale oversized images (merged 2026-04-26)
+- [AstrBotDevs/AstrBot#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) - fix: prevent path traversal in file uploads (merged 2026-04-24)
 <!--END_SECTION:merged_prs-->
 
 ## Working Style
