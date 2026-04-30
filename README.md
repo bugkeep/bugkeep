@@ -35,6 +35,7 @@ I am focusing my public work around three connected areas:
 Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 
 <!--START_SECTION:merged_prs-->
+- [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) - fix: align OpenAI http_client with SDK httpx (merged 2026-04-30)
 - [deepseek-ai/awesome-deepseek-agent#27](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/27) - Add WorkBuddy DeepSeek V4 guide (merged 2026-04-30)
 - [AstrBotDevs/AstrBot#7807](https://github.com/AstrBotDevs/AstrBot/pull/7807) - fix(core): downscale oversized images (merged 2026-04-26)
 - [AstrBotDevs/AstrBot#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) - fix: prevent path traversal in file uploads (merged 2026-04-24)
