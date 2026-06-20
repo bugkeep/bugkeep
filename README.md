@@ -35,6 +35,7 @@ I am focusing my public work around three connected areas:
 Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 
 <!--START_SECTION:merged_prs-->
+- [casosorg/casos#71](https://github.com/casosorg/casos/pull/71) - fix: support ExternalName services in service management (merged 2026-06-20)
 - [casosorg/casos#70](https://github.com/casosorg/casos/pull/70) - fix: reject invalid roleRef kind for cluster role bindings (merged 2026-06-19)
 - [casosorg/casos#69](https://github.com/casosorg/casos/pull/69) - fix: require sign in for protected API endpoints (merged 2026-06-19)
 - [MoonshotAI/kimi-cli#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) - fix(acp): replay session history on load (merged 2026-05-28)
