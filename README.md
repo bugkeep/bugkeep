@@ -35,6 +35,8 @@ I am focusing my public work around three connected areas:
 Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 
 <!--START_SECTION:merged_prs-->
+- [casosorg/casos#72](https://github.com/casosorg/casos/pull/72) - fix: restore local access for NodePort services (merged 2026-06-21)
+- [casosorg/casos#73](https://github.com/casosorg/casos/pull/73) - feat: add PVC mount support for StatefulSets (merged 2026-06-21)
 - [casosorg/casos#71](https://github.com/casosorg/casos/pull/71) - fix: support ExternalName services in service management (merged 2026-06-20)
 - [casosorg/casos#70](https://github.com/casosorg/casos/pull/70) - fix: reject invalid roleRef kind for cluster role bindings (merged 2026-06-19)
 - [casosorg/casos#69](https://github.com/casosorg/casos/pull/69) - fix: require sign in for protected API endpoints (merged 2026-06-19)
@@ -43,7 +45,6 @@ Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 - [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) - fix: align OpenAI http_client with SDK httpx (merged 2026-04-30)
 - [deepseek-ai/awesome-deepseek-agent#27](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/27) - Add WorkBuddy DeepSeek V4 guide (merged 2026-04-30)
 - [AstrBotDevs/AstrBot#7807](https://github.com/AstrBotDevs/AstrBot/pull/7807) - fix(core): downscale oversized images (merged 2026-04-26)
-- [AstrBotDevs/AstrBot#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) - fix: prevent path traversal in file uploads (merged 2026-04-24)
 <!--END_SECTION:merged_prs-->
 
 ## Working Style
