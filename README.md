@@ -35,6 +35,7 @@ I am focusing my public work around three connected areas:
 Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 
 <!--START_SECTION:merged_prs-->
+- [casosorg/casos#84](https://github.com/casosorg/casos/pull/84) - feat: add backend e2e ui tests (merged 2026-06-26)
 - [casosorg/casos#74](https://github.com/casosorg/casos/pull/74) - feat: add automatic worker node deployment (merged 2026-06-24)
 - [casosorg/casos#72](https://github.com/casosorg/casos/pull/72) - fix: restore local access for NodePort services (merged 2026-06-21)
 - [casosorg/casos#73](https://github.com/casosorg/casos/pull/73) - feat: add PVC mount support for StatefulSets (merged 2026-06-21)
@@ -44,7 +45,6 @@ Auto-updated daily at 00:00 (Asia/Shanghai) from merged upstream PRs.
 - [MoonshotAI/kimi-cli#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) - fix(acp): replay session history on load (merged 2026-05-28)
 - [web3infra-foundation/libra#364](https://github.com/web3infra-foundation/libra/pull/364) - feat(clean): add -d, -x, -X, --exclude flags (merged 2026-05-08)
 - [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) - fix: align OpenAI http_client with SDK httpx (merged 2026-04-30)
-- [deepseek-ai/awesome-deepseek-agent#27](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/27) - Add WorkBuddy DeepSeek V4 guide (merged 2026-04-30)
 <!--END_SECTION:merged_prs-->
 
 ## Working Style
