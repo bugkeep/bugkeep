@@ -40,16 +40,16 @@ turns a feature into something maintainers can actually merge.
 ## Recent Footprints
 
 <!--START_SECTION:merged_prs-->
-- [casosorg/casos#74](https://github.com/casosorg/casos/pull/74) — feat: add automatic worker node deployment (v1.16.0)
-- [casosorg/casos#84](https://github.com/casosorg/casos/pull/84) — feat: add backend e2e ui tests (v1.17.0)
-- [casosorg/casos#73](https://github.com/casosorg/casos/pull/73) — feat: add PVC mount support for StatefulSets
-- [casosorg/casos#72](https://github.com/casosorg/casos/pull/72) — fix: restore local access for NodePort services
-- [casosorg/casos#71](https://github.com/casosorg/casos/pull/71) — fix: support ExternalName services in service management
-- [casosorg/casos#70](https://github.com/casosorg/casos/pull/70) — fix: reject invalid roleRef kind for cluster role bindings
-- [casosorg/casos#69](https://github.com/casosorg/casos/pull/69) — fix: require sign in for protected API endpoints
-- [MoonshotAI/kimi-cli#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) — fix(acp): replay session history on load
-- [web3infra-foundation/libra#364](https://github.com/web3infra-foundation/libra/pull/364) — feat(clean): add -d, -x, -X, --exclude flags
-- [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) — fix: align OpenAI http_client with SDK httpx
+- [casosorg/casos#84](https://github.com/casosorg/casos/pull/84) - feat: add backend e2e ui tests (merged 2026-06-26)
+- [casosorg/casos#74](https://github.com/casosorg/casos/pull/74) - feat: add automatic worker node deployment (merged 2026-06-24)
+- [casosorg/casos#72](https://github.com/casosorg/casos/pull/72) - fix: restore local access for NodePort services (merged 2026-06-21)
+- [casosorg/casos#73](https://github.com/casosorg/casos/pull/73) - feat: add PVC mount support for StatefulSets (merged 2026-06-21)
+- [casosorg/casos#71](https://github.com/casosorg/casos/pull/71) - fix: support ExternalName services in service management (merged 2026-06-20)
+- [casosorg/casos#70](https://github.com/casosorg/casos/pull/70) - fix: reject invalid roleRef kind for cluster role bindings (merged 2026-06-19)
+- [casosorg/casos#69](https://github.com/casosorg/casos/pull/69) - fix: require sign in for protected API endpoints (merged 2026-06-19)
+- [MoonshotAI/kimi-cli#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) - fix(acp): replay session history on load (merged 2026-05-28)
+- [web3infra-foundation/libra#364](https://github.com/web3infra-foundation/libra/pull/364) - feat(clean): add -d, -x, -X, --exclude flags (merged 2026-05-08)
+- [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) - fix: align OpenAI http_client with SDK httpx (merged 2026-04-30)
 <!--END_SECTION:merged_prs-->
 
 ## A Note
