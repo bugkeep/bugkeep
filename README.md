@@ -2,41 +2,42 @@
 
 # bugkeep
 
-**Cloud-Native Platform Backend · Kubernetes · AI Infra**
+**Cloud-native backends, Kubernetes-shaped systems, and patches that last.**
 
-CS grad student working on cloud-native platform backends, Kubernetes
-operators, and CI/E2E for distributed systems. Active contributor in the
-Casbin / CasOS / Casdoor ecosystem, building production-shaped open-source
-patches that survive review.
+I like backend work that gets close to real infrastructure: Kubernetes
+resources, auth boundaries, storage, networking, CI, and the quiet glue that
+turns a feature into something maintainers can actually merge.
 
 </div>
 
 ---
 
-## Direction
+## What I Keep Coming Back To
 
-My public work is concentrated on three connected areas:
+- **Platform backends**: APIs that manage real cluster resources, not just rows in a database.
+- **Kubernetes edges**: Services, Ingress, cert-manager, RBAC, StatefulSets, storage, pod logs, and exec paths.
+- **Open-source maintenance**: small fixes with a reproduction, a reason, and tests when behavior can regress.
+- **Agent infrastructure**: memory, retrieval, tool calls, and the backend paths agents need when they leave the demo.
 
-- **Cloud-native platform backend**: Kubernetes resource management, RBAC, networking (Ingress / cert-manager), StatefulSet storage, NodePort / ExternalName services, and the controller-style API design patterns that go with them.
-- **Open-source platform engineering**: small, conservative, reviewable patches against active projects in the Casbin / Casdoor / CasOS / Kubernetes ecosystem. I prefer fixes that match the existing project style, come with tests, and land clean.
-- **AI Infra for agent platforms**: long-term memory, layered retrieval, and the backend plumbing that lets agents talk to real systems (currently exploring TencentDB Agent Memory through the Tencent Rhino-Bird open-source program).
+## How I Work
 
-## Currently Active In
+- I read the surrounding code before touching the line that looks guilty.
+- I prefer boring patches in the best sense: narrow, explainable, and easy to review.
+- I enjoy the part where a vague bug becomes a concrete failing path.
+- I tend to build bigger ideas in a fork first, then upstream the pieces that have earned their shape.
+- I care about the last 20%: names, error paths, tests, and whether the next maintainer can follow the trail.
 
-- **[casosorg/casos](https://github.com/casosorg/casos)** — A cloud operating system built on Kubernetes, with an embedded control plane. I am the **#1 external contributor** by PR count and have shipped **7 merged PRs** covering PVC / StatefulSet storage, Service management, RBAC, and end-to-end UI testing infrastructure.
-- **Casbin / Casdoor ecosystem** — Selected for the **Casbin 明日之星 (Casbin Rising Star)** program, an official community recognition. Casdoor is the IAM layer CasOS uses for OAuth2 / OIDC, and CasOS is built on it.
-- **[TencentDB Agent Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory)** — Participant in the **2026 Tencent Rhino-Bird Open-Source Talent Program**, working through the issue-practice track on layered memory, hybrid retrieval (BM25 + vector + RRF), and integration paths for K8S-facing agents.
+## Places I Keep Close
 
-## Pinned Work
-
-| Repository | What it shows |
+| Repository | Why it is here |
 | --- | --- |
-| [casosorg/casos](https://github.com/casosorg/casos) | 7 merged PRs across K8S resources, RBAC, services, and CI/E2E. My work is in releases v1.15.2 – v1.17.0. |
-| [bugkeep/casos](https://github.com/bugkeep/casos) | Active fork where I develop and validate larger features before upstreaming. Currently: cert-manager HTTPS integration, role binding UI, resource quota pages, web-based pod exec terminal (WebSocket), cross-pod log aggregation with keyword search, and execution-history drawer. |
-| [casdoor/casdoor](https://github.com/casdoor/casdoor) | The IAM / OIDC / MCP auth server. Linked from CasOS as the upstream auth provider. |
-| [apache/casbin-pycasbin](https://github.com/bugkeep/casbin-pycasbin) | Fork of the Apache Casbin Python binding, used as a reference for RBAC and policy-engine work. |
+| [casosorg/casos](https://github.com/casosorg/casos) | Upstream patches around Kubernetes resource management, RBAC, Services, StatefulSet storage, node deployment, and backend E2E coverage. |
+| [bugkeep/casos](https://github.com/bugkeep/casos) | A working fork for larger platform ideas: HTTPS via cert-manager, role binding UI, quota pages, web pod exec, log search, and execution history. |
+| [TencentDB Agent Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) | Notes and issue-practice work around layered memory, hybrid retrieval, and agent memory as backend infrastructure. |
+| [casdoor/casdoor](https://github.com/casdoor/casdoor) | Auth, OIDC, and identity-system code I keep close because platform backends eventually meet permissions. |
+| [apache/casbin-pycasbin](https://github.com/bugkeep/casbin-pycasbin) | Policy-engine reading ground for RBAC details and permission-model thinking. |
 
-## Selected Merged PRs
+## Recent Footprints
 
 <!--START_SECTION:merged_prs-->
 - [casosorg/casos#74](https://github.com/casosorg/casos/pull/74) — feat: add automatic worker node deployment (v1.16.0)
@@ -51,18 +52,11 @@ My public work is concentrated on three connected areas:
 - [AstrBotDevs/AstrBot#7773](https://github.com/AstrBotDevs/AstrBot/pull/7773) — fix: align OpenAI http_client with SDK httpx
 <!--END_SECTION:merged_prs-->
 
-## Working Style
+## A Note
 
-- Reproduce the bug or behavior before changing code.
-- Prefer small, reviewable patches that match the project's style.
-- Add tests or focused verification whenever behavior can regress.
-- Keep PRs easy to land: clear scope, clear reason, clear result.
-- For larger features, develop and stabilize in a fork first, then upstream.
-
-## Other
-
-- **Background**: 211 Master's, Computer Science / Software Engineering. Target: 2028 届 秋招, focused on 基础架构 / 云平台 / 容器平台 / AI Infra roles.
-- **Competition**: 满帮 Agent 算法大赛 — 第 29 名 (2025).
+I keep this profile less like a CV and more like a workbench. The interesting
+part is not a label; it is the trail of small decisions that make a system less
+mysterious than it was yesterday.
 
 <div align="center">
 
