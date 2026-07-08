@@ -40,16 +40,16 @@ turns a feature into something maintainers can actually merge.
 ## Recent Footprints
 
 <!--START_SECTION:merged_prs-->
+- [casosorg/casos#97](https://github.com/casosorg/casos/pull/97) - fix: improve app store install flow diagnostics (merged 2026-07-08)
+- [casosorg/casos#94](https://github.com/casosorg/casos/pull/94) - fix: finish worker deployment after delayed node readiness (merged 2026-07-08)
+- [casosorg/casos#93](https://github.com/casosorg/casos/pull/93) - fix: normalize helm kube version compatibility (merged 2026-07-08)
+- [casosorg/casos#95](https://github.com/casosorg/casos/pull/95) - fix: regenerate mismatched apiserver CA artifacts (merged 2026-07-08)
 - [casosorg/casos#91](https://github.com/casosorg/casos/pull/91) - fix: stabilize Helm App Store installs (merged 2026-07-04)
 - [casosorg/casos#90](https://github.com/casosorg/casos/pull/90) - fix: run App Store UI regression tests with worker node (merged 2026-07-04)
 - [casosorg/casos#89](https://github.com/casosorg/casos/pull/89) - fix: refresh apiserver serving certificate for changed IPs (merged 2026-07-04)
 - [casosorg/casos#86](https://github.com/casosorg/casos/pull/86) - fix: add Playwright UI smoke and worker-node deploy/repair regression tests (merged 2026-06-30)
 - [casosorg/casos#84](https://github.com/casosorg/casos/pull/84) - feat: add backend e2e ui tests (merged 2026-06-26)
 - [casosorg/casos#74](https://github.com/casosorg/casos/pull/74) - feat: add automatic worker node deployment (merged 2026-06-24)
-- [casosorg/casos#72](https://github.com/casosorg/casos/pull/72) - fix: restore local access for NodePort services (merged 2026-06-21)
-- [casosorg/casos#73](https://github.com/casosorg/casos/pull/73) - feat: add PVC mount support for StatefulSets (merged 2026-06-21)
-- [casosorg/casos#71](https://github.com/casosorg/casos/pull/71) - fix: support ExternalName services in service management (merged 2026-06-20)
-- [casosorg/casos#70](https://github.com/casosorg/casos/pull/70) - fix: reject invalid roleRef kind for cluster role bindings (merged 2026-06-19)
 <!--END_SECTION:merged_prs-->
 
 ## A Note
