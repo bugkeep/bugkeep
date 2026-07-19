@@ -79,25 +79,24 @@ jobs:
               return true;
             });
 
+          // Only upstream merges are showcased: patches that landed in someone else's
+          // repository. PRs merged inside the owner's own repos are left out, and the
+          // token only sees public data, so private repos never leak in either.
+          const showcasePRs = prs.filter(
+            (p) => !p.repo.toLowerCase().startsWith(ownerPrefix)
+          );
+
           const byRepo = new Map();
-          for (const pr of prs) {
+          for (const pr of showcasePRs) {
             if (!byRepo.has(pr.repo)) byRepo.set(pr.repo, []);
             byRepo.get(pr.repo).push(pr);
           }
 
-          const upstreamRepos = [...byRepo.keys()]
-            .filter((r) => !r.toLowerCase().startsWith(ownerPrefix))
-            .sort(
-              (a, b) => byRepo.get(b).length - byRepo.get(a).length || a.localeCompare(b)
-            );
-          const ownRepos = [...byRepo.keys()]
-            .filter((r) => r.toLowerCase().startsWith(ownerPrefix))
-            .sort(
-              (a, b) => byRepo.get(b).length - byRepo.get(a).length || a.localeCompare(b)
-            );
+          const upstreamRepos = [...byRepo.keys()].sort(
+            (a, b) => byRepo.get(b).length - byRepo.get(a).length || a.localeCompare(b)
+          );
 
-          const upstreamCount = upstreamRepos.reduce((n, r) => n + byRepo.get(r).length, 0);
-          const ownCount = ownRepos.reduce((n, r) => n + byRepo.get(r).length, 0);
+          const upstreamCount = showcasePRs.length;
 
           // ---- rendering ----------------------------------------------------------
 
@@ -108,19 +107,10 @@ jobs:
               "The etcd-compatible, MySQL-backed storage layer that CasOS builds on.",
             "AstrBotDevs/AstrBot":
               "An agentic chat platform — security and robustness fixes at the upload, image, and HTTP-client edges.",
-            "bugkeep/casos":
-              "The fork where bigger platform ideas grow up before they earn their way upstream — several patches above started life here.",
-            "bugkeep/ai-draw":
-              "A voice-first drawing app with its own agent runtime — one intense build cycle, from WebSocket event streams to spoken boolean shape operations.",
-            "bugkeep/tower-vib":
-              "Signal-processing experiments — ROI curves, environment tooling, sanity checks.",
-            "bugkeep/bugkeep":
-              "This profile — and yes, part of its README updates itself.",
           };
 
-          // Collapse long tables: upstream repos past 20 PRs, own repos in double digits.
+          // Collapse a repo table once it grows past this many rows.
           const UPSTREAM_COLLAPSE_THRESHOLD = 20;
-          const OWN_COLLAPSE_THRESHOLD = 9;
 
           const esc = (s) => s.replace(/\|/g, "\\|");
           const dateOf = (p) => String(p.mergedAt).slice(0, 10);
@@ -144,7 +134,7 @@ jobs:
             ].join("\n");
           }
 
-          function repoSection(repo, list, collapseThreshold) {
+          function repoSection(repo, list) {
             const lines = [
               `#### [${repo}](https://github.com/${repo}) · ${list.length} merged`,
             ];
@@ -152,7 +142,7 @@ jobs:
               lines.push("", `> ${DESCRIPTIONS[repo]}`);
             }
             lines.push("");
-            if (list.length > collapseThreshold) {
+            if (list.length > UPSTREAM_COLLAPSE_THRESHOLD) {
               lines.push(
                 "<details>",
                 `<summary><b>All ${list.length} merged PRs</b></summary>`,
@@ -170,8 +160,7 @@ jobs:
           const out = [];
           out.push(
             "The number I watch on GitHub is not stars. It is the patches a maintainer",
-            `read, trusted, and merged — **${prs.length} so far, across ${byRepo.size} repositories, ${upstreamRepos.length} of them`,
-            "upstream**."
+            `read, trusted, and merged — **${upstreamCount} so far, across ${upstreamRepos.length} upstream repositories**.`
           );
 
           if (upstreamCount > 0) {
@@ -182,7 +171,7 @@ jobs:
               .flatMap((r) => byRepo.get(r))
               .sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
             for (const repo of multi) {
-              out.push("", repoSection(repo, byRepo.get(repo), UPSTREAM_COLLAPSE_THRESHOLD));
+              out.push("", repoSection(repo, byRepo.get(repo)));
             }
             if (singlePRs.length > 0) {
               out.push(
@@ -194,13 +183,8 @@ jobs:
                 repoTable(singlePRs)
               );
             }
-          }
-
-          if (ownCount > 0) {
-            out.push("", `### In My Own Workbench · ${ownCount}`);
-            for (const repo of ownRepos) {
-              out.push("", repoSection(repo, byRepo.get(repo), OWN_COLLAPSE_THRESHOLD));
-            }
+          } else {
+            out.push("", "_(no upstream merged PRs found yet)_");
           }
 
           out.push(
@@ -210,7 +194,7 @@ jobs:
             "_Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._",
             ""
           );
-          const feed = prs.slice(0, 10);
+          const feed = showcasePRs.slice(0, 10);
           out.push(
             feed.length > 0
               ? feed
@@ -223,7 +207,7 @@ jobs:
           );
 
           const badges = [
-            `![merged PRs](https://img.shields.io/badge/merged_PRs-${prs.length}-238636?style=flat-square&logo=github&logoColor=white)`,
+            `![upstream PRs](https://img.shields.io/badge/upstream_PRs-${upstreamCount}-238636?style=flat-square&logo=github&logoColor=white)`,
             `![upstream repos](https://img.shields.io/badge/upstream_repos-${upstreamRepos.length}-1F6FEB?style=flat-square&logo=github&logoColor=white)`,
           ].join("\n");
 
