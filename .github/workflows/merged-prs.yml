@@ -20,133 +20,231 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Render README section
+      - name: Render README sections
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE_OWNER: ${{ github.repository_owner }}
-          CURRENT_REPOSITORY: ${{ github.repository }}
         run: |
           node <<'EOF'
           const { execFileSync } = require("child_process");
           const fs = require("fs");
 
           const owner = process.env.PROFILE_OWNER;
-          const currentRepository = String(process.env.CURRENT_REPOSITORY || "").toLowerCase();
+          const ownerPrefix = `${owner.toLowerCase()}/`;
 
           function ghJson(args) {
             const out = execFileSync("gh", args, {
               encoding: "utf8",
               stdio: ["ignore", "pipe", "inherit"],
             }).trim();
-            return out ? JSON.parse(out) : [];
+            return out ? JSON.parse(out) : {};
           }
 
-          function parentNameWithOwner(parent) {
-            if (!parent) return null;
-            if (parent.nameWithOwner) return parent.nameWithOwner;
-            if (parent.owner?.login && parent.name) {
-              return `${parent.owner.login}/${parent.name}`;
-            }
-            return null;
-          }
+          // ---- data ---------------------------------------------------------------
 
-          function targetRepoFromUrl(url) {
-            const match = String(url).match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/);
-            if (!match) return null;
-            return {
-              repo: `${match[1]}/${match[2]}`,
-              number: Number(match[3]),
-            };
-          }
-
-          const forks = ghJson([
-            "repo",
-            "list",
-            owner,
-            "--fork",
-            "--limit",
-            "200",
-            "--json",
-            "nameWithOwner,parent",
-          ]);
-
-          const upstreamRepos = [...new Set(
-            forks.map((repo) => parentNameWithOwner(repo.parent)).filter(Boolean)
-          )].sort((a, b) => a.localeCompare(b));
-
-          const results = [];
-          for (const upstreamRepo of upstreamRepos) {
-            let prs = [];
-            try {
-              prs = ghJson([
-                "pr",
-                "list",
-                "--repo",
-                upstreamRepo,
-                "--state",
-                "merged",
-                "--author",
-                owner,
-                "--limit",
-                "100",
-                "--json",
-                "number,title,url,mergedAt,isCrossRepository",
+          function fetchMergedPRs() {
+            const items = [];
+            for (let page = 1; page <= 10; page += 1) {
+              const res = ghJson([
+                "api",
+                `search/issues?q=author:${owner}+is:pr+is:merged&per_page=100&page=${page}`,
               ]);
-            } catch (error) {
-              console.warn(`Skipping ${upstreamRepo}: ${error.message}`);
-              continue;
+              const batch = res.items || [];
+              items.push(...batch);
+              if (batch.length < 100 || items.length >= (res.total_count || 0)) break;
             }
-
-            for (const pr of prs) {
-              const target = targetRepoFromUrl(pr.url);
-              if (!target) continue;
-              if (!pr.mergedAt) continue;
-              if (!pr.isCrossRepository) continue;
-              if (target.repo.toLowerCase() === currentRepository) continue;
-
-              results.push({
-                repo: target.repo,
-                number: target.number,
-                title: String(pr.title || "").replace(/\r?\n/g, " ").trim(),
-                url: pr.url,
-                mergedAt: pr.mergedAt,
-              });
-            }
+            return items;
           }
 
           const seen = new Set();
-          const uniqueResults = results
-            .sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt))
-            .filter((pr) => {
-              if (seen.has(pr.url)) return false;
-              seen.add(pr.url);
+          const prs = fetchMergedPRs()
+            .map((it) => ({
+              repo: String(it.repository_url || "").replace(
+                "https://api.github.com/repos/",
+                ""
+              ),
+              number: it.number,
+              title: String(it.title || "").replace(/\r?\n/g, " ").trim(),
+              url: it.html_url,
+              mergedAt: (it.pull_request && it.pull_request.merged_at) || it.closed_at,
+            }))
+            .filter((p) => p.repo && p.url && p.mergedAt)
+            .sort(
+              (a, b) => new Date(b.mergedAt) - new Date(a.mergedAt) || b.number - a.number
+            )
+            .filter((p) => {
+              if (seen.has(p.url)) return false;
+              seen.add(p.url);
               return true;
-            })
-            .slice(0, 10);
+            });
 
-          const lines =
-            uniqueResults.length > 0
-              ? uniqueResults.map((p) => {
-                  const date = String(p.mergedAt).slice(0, 10);
-                  return `- [${p.repo}#${p.number}](${p.url}) - ${p.title} (merged ${date})`;
-                })
-              : ["- _(no merged PRs found)_"];
-
-          const markerStart = "<!--START_SECTION:merged_prs-->";
-          const markerEnd = "<!--END_SECTION:merged_prs-->";
-          const readmePath = "README.md";
-          const readme = fs.readFileSync(readmePath, "utf8");
-          const startIdx = readme.indexOf(markerStart);
-          const endIdx = readme.indexOf(markerEnd);
-          if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
-            throw new Error("README markers not found or invalid.");
+          const byRepo = new Map();
+          for (const pr of prs) {
+            if (!byRepo.has(pr.repo)) byRepo.set(pr.repo, []);
+            byRepo.get(pr.repo).push(pr);
           }
 
-          const before = readme.slice(0, startIdx + markerStart.length);
-          const after = readme.slice(endIdx);
-          const next = `${before}\n${lines.join("\n")}\n${after}`;
-          fs.writeFileSync(readmePath, next, "utf8");
+          const upstreamRepos = [...byRepo.keys()]
+            .filter((r) => !r.toLowerCase().startsWith(ownerPrefix))
+            .sort(
+              (a, b) => byRepo.get(b).length - byRepo.get(a).length || a.localeCompare(b)
+            );
+          const ownRepos = [...byRepo.keys()]
+            .filter((r) => r.toLowerCase().startsWith(ownerPrefix))
+            .sort(
+              (a, b) => byRepo.get(b).length - byRepo.get(a).length || a.localeCompare(b)
+            );
+
+          const upstreamCount = upstreamRepos.reduce((n, r) => n + byRepo.get(r).length, 0);
+          const ownCount = ownRepos.reduce((n, r) => n + byRepo.get(r).length, 0);
+
+          // ---- rendering ----------------------------------------------------------
+
+          const DESCRIPTIONS = {
+            "casosorg/casos":
+              "A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.",
+            "casosorg/kine":
+              "The etcd-compatible, MySQL-backed storage layer that CasOS builds on.",
+            "AstrBotDevs/AstrBot":
+              "An agentic chat platform — security and robustness fixes at the upload, image, and HTTP-client edges.",
+            "bugkeep/casos":
+              "The fork where bigger platform ideas grow up before they earn their way upstream — several patches above started life here.",
+            "bugkeep/ai-draw":
+              "A voice-first drawing app with its own agent runtime — one intense build cycle, from WebSocket event streams to spoken boolean shape operations.",
+            "bugkeep/tower-vib":
+              "Signal-processing experiments — ROI curves, environment tooling, sanity checks.",
+            "bugkeep/bugkeep":
+              "This profile — and yes, part of its README updates itself.",
+          };
+
+          // Collapse long tables: upstream repos past 20 PRs, own repos in double digits.
+          const UPSTREAM_COLLAPSE_THRESHOLD = 20;
+          const OWN_COLLAPSE_THRESHOLD = 9;
+
+          const esc = (s) => s.replace(/\|/g, "\\|");
+          const dateOf = (p) => String(p.mergedAt).slice(0, 10);
+
+          function simpleTable(list) {
+            const rows = list.map(
+              (p) => `| [#${p.number}](${p.url}) | ${esc(p.title)} | ${dateOf(p)} |`
+            );
+            return ["| PR | Change | Merged |", "| --- | --- | --- |", ...rows].join("\n");
+          }
+
+          function repoTable(list) {
+            const rows = list.map(
+              (p) =>
+                `| [${p.repo}](https://github.com/${p.repo}) | [#${p.number}](${p.url}) | ${esc(p.title)} | ${dateOf(p)} |`
+            );
+            return [
+              "| Repository | PR | Change | Merged |",
+              "| --- | --- | --- | --- |",
+              ...rows,
+            ].join("\n");
+          }
+
+          function repoSection(repo, list, collapseThreshold) {
+            const lines = [
+              `#### [${repo}](https://github.com/${repo}) · ${list.length} merged`,
+            ];
+            if (DESCRIPTIONS[repo]) {
+              lines.push("", `> ${DESCRIPTIONS[repo]}`);
+            }
+            lines.push("");
+            if (list.length > collapseThreshold) {
+              lines.push(
+                "<details>",
+                `<summary><b>All ${list.length} merged PRs</b></summary>`,
+                "",
+                simpleTable(list),
+                "",
+                "</details>"
+              );
+            } else {
+              lines.push(simpleTable(list));
+            }
+            return lines.join("\n");
+          }
+
+          const out = [];
+          out.push(
+            "The number I watch on GitHub is not stars. It is the patches a maintainer",
+            `read, trusted, and merged — **${prs.length} so far, across ${byRepo.size} repositories, ${upstreamRepos.length} of them`,
+            "upstream**."
+          );
+
+          if (upstreamCount > 0) {
+            out.push("", `### Upstream & Open Source · ${upstreamCount}`);
+            const multi = upstreamRepos.filter((r) => byRepo.get(r).length > 1);
+            const singlePRs = upstreamRepos
+              .filter((r) => byRepo.get(r).length === 1)
+              .flatMap((r) => byRepo.get(r))
+              .sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
+            for (const repo of multi) {
+              out.push("", repoSection(repo, byRepo.get(repo), UPSTREAM_COLLAPSE_THRESHOLD));
+            }
+            if (singlePRs.length > 0) {
+              out.push(
+                "",
+                `#### One-Patch Stops · ${singlePRs.length}`,
+                "",
+                "> Small, sharp fixes in tools I actually use.",
+                "",
+                repoTable(singlePRs)
+              );
+            }
+          }
+
+          if (ownCount > 0) {
+            out.push("", `### In My Own Workbench · ${ownCount}`);
+            for (const repo of ownRepos) {
+              out.push("", repoSection(repo, byRepo.get(repo), OWN_COLLAPSE_THRESHOLD));
+            }
+          }
+
+          out.push(
+            "",
+            "### Live Feed — Freshest Merges",
+            "",
+            "_Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._",
+            ""
+          );
+          const feed = prs.slice(0, 10);
+          out.push(
+            feed.length > 0
+              ? feed
+                  .map(
+                    (p) =>
+                      `- [${p.repo}#${p.number}](${p.url}) - ${p.title} (merged ${dateOf(p)})`
+                  )
+                  .join("\n")
+              : "- _(no merged PRs found)_"
+          );
+
+          const badges = [
+            `![merged PRs](https://img.shields.io/badge/merged_PRs-${prs.length}-238636?style=flat-square&logo=github&logoColor=white)`,
+            `![upstream repos](https://img.shields.io/badge/upstream_repos-${upstreamRepos.length}-1F6FEB?style=flat-square&logo=github&logoColor=white)`,
+          ].join("\n");
+
+          // ---- splice -------------------------------------------------------------
+
+          function replaceSection(readme, name, content) {
+            const start = `<!--START_SECTION:${name}-->`;
+            const end = `<!--END_SECTION:${name}-->`;
+            const si = readme.indexOf(start);
+            const ei = readme.indexOf(end);
+            if (si === -1 || ei === -1 || ei < si) {
+              throw new Error(`README markers for section "${name}" not found or invalid.`);
+            }
+            return `${readme.slice(0, si + start.length)}\n${content}\n${readme.slice(ei)}`;
+          }
+
+          const readmePath = "README.md";
+          let readme = fs.readFileSync(readmePath, "utf8");
+          readme = replaceSection(readme, "merged_prs_showcase", out.join("\n"));
+          readme = replaceSection(readme, "merged_pr_stats", badges);
+          fs.writeFileSync(readmePath, readme, "utf8");
           EOF
 
       - name: Commit changes
@@ -161,6 +259,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add README.md
-          git commit -m "docs: update merged PRs"
+          git commit -m "docs: update merged PR showcase"
           git push
-
