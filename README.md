@@ -15,8 +15,10 @@ turns a feature into something maintainers can actually merge.
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
+<!--START_SECTION:merged_pr_stats-->
 ![merged PRs](https://img.shields.io/badge/merged_PRs-73-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-6-1F6FEB?style=flat-square&logo=github&logoColor=white)
+<!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
 
 </div>
@@ -42,6 +44,7 @@ turns a feature into something maintainers can actually merge.
 
 ## Merged Pull Requests
 
+<!--START_SECTION:merged_prs-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
 read, trusted, and merged — **73 so far, across 10 repositories, 6 of them
 upstream**.
@@ -50,9 +53,7 @@ upstream**.
 
 #### [casosorg/casos](https://github.com/casosorg/casos) · 16 merged
 
-> A Kubernetes-flavored local cloud OS, and my main upstream: App Store
-> installs, worker nodes, certificates, RBAC, Services, storage, and the CI
-> that guards them.
+> A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 | PR | Change | Merged |
 | --- | --- | --- |
@@ -75,8 +76,7 @@ upstream**.
 
 #### [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) · 3 merged
 
-> An agentic chat platform — security and robustness fixes at the upload,
-> image, and HTTP-client edges.
+> An agentic chat platform — security and robustness fixes at the upload, image, and HTTP-client edges.
 
 | PR | Change | Merged |
 | --- | --- | --- |
@@ -97,21 +97,9 @@ upstream**.
 
 ### In My Own Workbench · 50
 
-#### [bugkeep/casos](https://github.com/bugkeep/casos) · 3 merged
-
-> The fork where bigger platform ideas grow up before they earn their way
-> upstream — several patches above started life here.
-
-| PR | Change | Merged |
-| --- | --- | --- |
-| [#20](https://github.com/bugkeep/casos/pull/20) | fix: regenerate mismatched apiserver CA artifacts | 2026-07-08 |
-| [#18](https://github.com/bugkeep/casos/pull/18) | fix: normalize Helm kubeVersion compatibility | 2026-07-08 |
-| [#17](https://github.com/bugkeep/casos/pull/17) | fix: finish worker deployment after delayed node readiness | 2026-07-08 |
-
 #### [bugkeep/ai-draw](https://github.com/bugkeep/ai-draw) · 36 merged
 
-> A voice-first drawing app with its own agent runtime — one intense build
-> cycle, from WebSocket event streams to spoken boolean shape operations.
+> A voice-first drawing app with its own agent runtime — one intense build cycle, from WebSocket event streams to spoken boolean shape operations.
 
 <details>
 <summary><b>All 36 merged PRs</b></summary>
@@ -141,66 +129,76 @@ upstream**.
 | [#17](https://github.com/bugkeep/ai-draw/pull/17) | 新增安全的绘图设置面板与请求级模型配置 | 2026-06-14 |
 | [#16](https://github.com/bugkeep/ai-draw/pull/16) | fix: stabilize spoken complex scenes and Bailian connectivity | 2026-06-14 |
 | [#15](https://github.com/bugkeep/ai-draw/pull/15) | [codex] feat: add hands-free voice-first drawing workflow | 2026-06-14 |
-| [#14](https://github.com/bugkeep/ai-draw/pull/14) | feat: add asset-assisted drawing and reliable complex scene execution | 2026-06-14 |
 | [#13](https://github.com/bugkeep/ai-draw/pull/13) | feat: add secure download, SVG sanitizer, asset cache, and serving endpoints | 2026-06-14 |
 | [#12](https://github.com/bugkeep/ai-draw/pull/12) | feat: add IconifyProvider, RankingService, and SearchService for asset search | 2026-06-14 |
 | [#11](https://github.com/bugkeep/ai-draw/pull/11) | feat: add DrawingModeRouter for intent-based drawing classification | 2026-06-14 |
-| [#10](https://github.com/bugkeep/ai-draw/pull/10) | feat: add polygon/polyline/path drawing tools with objectId tracking | 2026-06-14 |
-| [#9](https://github.com/bugkeep/ai-draw/pull/9) | fix: multi-turn conversation, TCP concurrency, and permission fixes | 2026-06-14 |
-| [#7](https://github.com/bugkeep/ai-draw/pull/7) | feat(s7): skills, sub-agents, role config, and MCP external tool bridge | 2026-06-14 |
+| [#14](https://github.com/bugkeep/ai-draw/pull/14) | feat: add asset-assisted drawing and reliable complex scene execution | 2026-06-14 |
 | [#6](https://github.com/bugkeep/ai-draw/pull/6) | feat(s6): three-layer context, tool_result truncation, context_pct, auto-compact | 2026-06-14 |
+| [#7](https://github.com/bugkeep/ai-draw/pull/7) | feat(s7): skills, sub-agents, role config, and MCP external tool bridge | 2026-06-14 |
+| [#10](https://github.com/bugkeep/ai-draw/pull/10) | feat: add polygon/polyline/path drawing tools with objectId tracking | 2026-06-14 |
 | [#5](https://github.com/bugkeep/ai-draw/pull/5) | feat(s5): tool permission approval with async user approval, Pydantic validation, and exponential backoff retry | 2026-06-14 |
 | [#4](https://github.com/bugkeep/ai-draw/pull/4) | feat(s4): add SessionManager for persistent conversation and task planning system | 2026-06-14 |
 | [#3](https://github.com/bugkeep/ai-draw/pull/3) | feat(s2): externalize event stream via WebSocket with subscription system | 2026-06-14 |
 | [#2](https://github.com/bugkeep/ai-draw/pull/2) | feat(s1): complete frontend-backend integration with voice input and canvas drawing | 2026-06-14 |
 | [#1](https://github.com/bugkeep/ai-draw/pull/1) | feat(s3): tracing, non-blocking run, task planning, and file/shell execution tools | 2026-06-14 |
+| [#9](https://github.com/bugkeep/ai-draw/pull/9) | fix: multi-turn conversation, TCP concurrency, and permission fixes | 2026-06-14 |
 
 </details>
 
 #### [bugkeep/tower-vib](https://github.com/bugkeep/tower-vib) · 10 merged
 
-> Signal-processing experiments — ROI curves, environment tooling, sanity
-> checks.
+> Signal-processing experiments — ROI curves, environment tooling, sanity checks.
 
 <details>
 <summary><b>All 10 merged PRs</b></summary>
 
 | PR | Change | Merged |
 | --- | --- | --- |
-| [#10](https://github.com/bugkeep/tower-vib/pull/10) | feat(sanity-check): add adaptive curve jump detection and robust repor… | 2026-01-20 |
+| [#10](https://github.com/bugkeep/tower-vib/pull/10) | feat(sanity-check):add adaptive curve jump detection and robust repor… | 2026-01-20 |
 | [#9](https://github.com/bugkeep/tower-vib/pull/9) | Update README.md | 2026-01-19 |
 | [#8](https://github.com/bugkeep/tower-vib/pull/8) | feat(env): implement env_manager CLI (dump/check/compare/report) | 2026-01-19 |
 | [#7](https://github.com/bugkeep/tower-vib/pull/7) | feat(env): add dependency checker and integrate into pipeline | 2026-01-18 |
-| [#6](https://github.com/bugkeep/tower-vib/pull/6) | feat: add env dump scrip and requirements generator | 2026-01-17 |
+| [#6](https://github.com/bugkeep/tower-vib/pull/6) | feat:Add env dump scrip and requirements generator | 2026-01-17 |
 | [#5](https://github.com/bugkeep/tower-vib/pull/5) | Update README.md | 2026-01-16 |
-| [#4](https://github.com/bugkeep/tower-vib/pull/4) | feat: ROI mean curve | 2026-01-16 |
-| [#3](https://github.com/bugkeep/tower-vib/pull/3) | feat: extract ROI video and cache (video → ROI → npz) | 2026-01-16 |
-| [#2](https://github.com/bugkeep/tower-vib/pull/2) | feat: ROI cache | 2026-01-13 |
-| [#1](https://github.com/bugkeep/tower-vib/pull/1) | chore: add gitignore and keep data/results dirs | 2026-01-13 |
+| [#3](https://github.com/bugkeep/tower-vib/pull/3) | Feat/2026 1 15：Extract ROI video and cache (video → ROI → npz) | 2026-01-16 |
+| [#4](https://github.com/bugkeep/tower-vib/pull/4) | Feat/roi mean curve | 2026-01-16 |
+| [#2](https://github.com/bugkeep/tower-vib/pull/2) | Feat/2026 1 13 roi cache | 2026-01-13 |
+| [#1](https://github.com/bugkeep/tower-vib/pull/1) | chore:add gitignore and keep data/results dirs | 2026-01-13 |
 
 </details>
+
+#### [bugkeep/casos](https://github.com/bugkeep/casos) · 3 merged
+
+> The fork where bigger platform ideas grow up before they earn their way upstream — several patches above started life here.
+
+| PR | Change | Merged |
+| --- | --- | --- |
+| [#17](https://github.com/bugkeep/casos/pull/17) | fix: finish worker deployment after delayed node readiness | 2026-07-08 |
+| [#20](https://github.com/bugkeep/casos/pull/20) | fix: regenerate mismatched apiserver CA artifacts | 2026-07-08 |
+| [#18](https://github.com/bugkeep/casos/pull/18) | fix: normalize Helm kubeVersion compatibility | 2026-07-08 |
 
 #### [bugkeep/bugkeep](https://github.com/bugkeep/bugkeep) · 1 merged
 
 > This profile — and yes, part of its README updates itself.
 
-- [#1](https://github.com/bugkeep/bugkeep/pull/1) — docs: show merged PRs on profile (2026-04-24)
+| PR | Change | Merged |
+| --- | --- | --- |
+| [#1](https://github.com/bugkeep/bugkeep/pull/1) | docs: show merged PRs on profile | 2026-04-24 |
 
 ### Live Feed — Freshest Merges
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
-<!--START_SECTION:merged_prs-->
+- [casosorg/kine#1](https://github.com/casosorg/kine/pull/1) - fix: keep Kine MySQL revisions ordered (merged 2026-07-19)
 - [casosorg/casos#96](https://github.com/casosorg/casos/pull/96) - fix: bootstrap local app store platform dependencies (merged 2026-07-09)
 - [casosorg/casos#97](https://github.com/casosorg/casos/pull/97) - fix: improve app store install flow diagnostics (merged 2026-07-08)
 - [casosorg/casos#94](https://github.com/casosorg/casos/pull/94) - fix: finish worker deployment after delayed node readiness (merged 2026-07-08)
 - [casosorg/casos#93](https://github.com/casosorg/casos/pull/93) - fix: normalize helm kube version compatibility (merged 2026-07-08)
 - [casosorg/casos#95](https://github.com/casosorg/casos/pull/95) - fix: regenerate mismatched apiserver CA artifacts (merged 2026-07-08)
+- [bugkeep/casos#17](https://github.com/bugkeep/casos/pull/17) - fix: finish worker deployment after delayed node readiness (merged 2026-07-08)
+- [bugkeep/casos#20](https://github.com/bugkeep/casos/pull/20) - fix: regenerate mismatched apiserver CA artifacts (merged 2026-07-08)
+- [bugkeep/casos#18](https://github.com/bugkeep/casos/pull/18) - fix: normalize Helm kubeVersion compatibility (merged 2026-07-08)
 - [casosorg/casos#91](https://github.com/casosorg/casos/pull/91) - fix: stabilize Helm App Store installs (merged 2026-07-04)
-- [casosorg/casos#90](https://github.com/casosorg/casos/pull/90) - fix: run App Store UI regression tests with worker node (merged 2026-07-04)
-- [casosorg/casos#89](https://github.com/casosorg/casos/pull/89) - fix: refresh apiserver serving certificate for changed IPs (merged 2026-07-04)
-- [casosorg/casos#86](https://github.com/casosorg/casos/pull/86) - fix: add Playwright UI smoke and worker-node deploy/repair regression tests (merged 2026-06-30)
-- [casosorg/casos#84](https://github.com/casosorg/casos/pull/84) - feat: add backend e2e ui tests (merged 2026-06-26)
 <!--END_SECTION:merged_prs-->
 
 ---
