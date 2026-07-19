@@ -44,7 +44,7 @@ turns a feature into something maintainers can actually merge.
 
 ## Merged Pull Requests
 
-<!--START_SECTION:merged_prs-->
+<!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
 read, trusted, and merged — **73 so far, across 10 repositories, 6 of them
 upstream**.
@@ -199,7 +199,7 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [bugkeep/casos#20](https://github.com/bugkeep/casos/pull/20) - fix: regenerate mismatched apiserver CA artifacts (merged 2026-07-08)
 - [bugkeep/casos#18](https://github.com/bugkeep/casos/pull/18) - fix: normalize Helm kubeVersion compatibility (merged 2026-07-08)
 - [casosorg/casos#91](https://github.com/casosorg/casos/pull/91) - fix: stabilize Helm App Store installs (merged 2026-07-04)
-<!--END_SECTION:merged_prs-->
+<!--END_SECTION:merged_prs_showcase-->
 
 ---
 
