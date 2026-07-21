@@ -16,7 +16,7 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-23-238636?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-24-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-6-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
@@ -46,16 +46,17 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **23 so far, across 6 upstream repositories**.
+read, trusted, and merged — **24 so far, across 6 upstream repositories**.
 
-### Upstream & Open Source · 23
+### Upstream & Open Source · 24
 
-#### [casosorg/casos](https://github.com/casosorg/casos) · 16 merged
+#### [casosorg/casos](https://github.com/casosorg/casos) · 17 merged
 
 > A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 | PR | Change | Merged |
 | --- | --- | --- |
+| [#102](https://github.com/casosorg/casos/pull/102) | feat: add managed flannel overlay networking | 2026-07-21 |
 | [#96](https://github.com/casosorg/casos/pull/96) | fix: bootstrap local app store platform dependencies | 2026-07-09 |
 | [#97](https://github.com/casosorg/casos/pull/97) | fix: improve app store install flow diagnostics | 2026-07-08 |
 | [#94](https://github.com/casosorg/casos/pull/94) | fix: finish worker deployment after delayed node readiness | 2026-07-08 |
@@ -98,6 +99,7 @@ read, trusted, and merged — **23 so far, across 6 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [casosorg/casos#102](https://github.com/casosorg/casos/pull/102) - feat: add managed flannel overlay networking (merged 2026-07-21)
 - [casosorg/kine#1](https://github.com/casosorg/kine/pull/1) - fix: keep Kine MySQL revisions ordered (merged 2026-07-19)
 - [casosorg/casos#96](https://github.com/casosorg/casos/pull/96) - fix: bootstrap local app store platform dependencies (merged 2026-07-09)
 - [casosorg/casos#97](https://github.com/casosorg/casos/pull/97) - fix: improve app store install flow diagnostics (merged 2026-07-08)
@@ -107,7 +109,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#91](https://github.com/casosorg/casos/pull/91) - fix: stabilize Helm App Store installs (merged 2026-07-04)
 - [casosorg/casos#90](https://github.com/casosorg/casos/pull/90) - fix: run App Store UI regression tests with worker node (merged 2026-07-04)
 - [casosorg/casos#89](https://github.com/casosorg/casos/pull/89) - fix: refresh apiserver serving certificate for changed IPs (merged 2026-07-04)
-- [casosorg/casos#86](https://github.com/casosorg/casos/pull/86) - fix: add Playwright UI smoke and worker-node deploy/repair regression tests (merged 2026-06-30)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
