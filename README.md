@@ -16,8 +16,8 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-29-238636?style=flat-square&logo=github&logoColor=white)
-![upstream repos](https://img.shields.io/badge/upstream_repos-6-1F6FEB?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-30-238636?style=flat-square&logo=github&logoColor=white)
+![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
 
@@ -46,9 +46,9 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **29 so far, across 6 upstream repositories**.
+read, trusted, and merged — **30 so far, across 7 upstream repositories**.
 
-### Upstream & Open Source · 29
+### Upstream & Open Source · 30
 
 #### [casosorg/casos](https://github.com/casosorg/casos) · 22 merged
 
@@ -94,12 +94,13 @@ read, trusted, and merged — **29 so far, across 6 upstream repositories**.
 | [#7807](https://github.com/AstrBotDevs/AstrBot/pull/7807) | fix(core): downscale oversized images | 2026-04-26 |
 | [#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) | fix: prevent path traversal in file uploads | 2026-04-24 |
 
-#### One-Patch Stops · 4
+#### One-Patch Stops · 5
 
 > Small, sharp fixes in tools I actually use.
 
 | Repository | PR | Change | Merged |
 | --- | --- | --- | --- |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | [#41357](https://github.com/vllm-project/vllm/pull/41357) | [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits | 2026-07-29 |
 | [casosorg/kine](https://github.com/casosorg/kine) | [#1](https://github.com/casosorg/kine/pull/1) | fix: keep Kine MySQL revisions ordered | 2026-07-19 |
 | [MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli) | [#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) | fix(acp): replay session history on load | 2026-05-28 |
 | [libra-tools/libra](https://github.com/libra-tools/libra) | [#364](https://github.com/libra-tools/libra/pull/364) | feat(clean): add -d, -x, -X, --exclude flags | 2026-05-08 |
@@ -109,6 +110,7 @@ read, trusted, and merged — **29 so far, across 6 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [vllm-project/vllm#41357](https://github.com/vllm-project/vllm/pull/41357) - [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits (merged 2026-07-29)
 - [casosorg/casos#111](https://github.com/casosorg/casos/pull/111) - fix: make implicit image pull policy opt-in (merged 2026-07-25)
 - [casosorg/casos#108](https://github.com/casosorg/casos/pull/108) - fix: validate helm chart readiness and compatibility (merged 2026-07-25)
 - [casosorg/casos#105](https://github.com/casosorg/casos/pull/105) - fix: stabilize worker DNS bootstrap (merged 2026-07-25)
@@ -118,7 +120,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/kine#1](https://github.com/casosorg/kine/pull/1) - fix: keep Kine MySQL revisions ordered (merged 2026-07-19)
 - [casosorg/casos#96](https://github.com/casosorg/casos/pull/96) - fix: bootstrap local app store platform dependencies (merged 2026-07-09)
 - [casosorg/casos#97](https://github.com/casosorg/casos/pull/97) - fix: improve app store install flow diagnostics (merged 2026-07-08)
-- [casosorg/casos#94](https://github.com/casosorg/casos/pull/94) - fix: finish worker deployment after delayed node readiness (merged 2026-07-08)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
