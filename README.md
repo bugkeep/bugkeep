@@ -16,7 +16,7 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-30-238636?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-35-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
@@ -46,19 +46,24 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **30 so far, across 7 upstream repositories**.
+read, trusted, and merged — **35 so far, across 7 upstream repositories**.
 
-### Upstream & Open Source · 30
+### Upstream & Open Source · 35
 
-#### [casosorg/casos](https://github.com/casosorg/casos) · 22 merged
+#### [casosorg/casos](https://github.com/casosorg/casos) · 27 merged
 
 > A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 <details>
-<summary><b>All 22 merged PRs</b></summary>
+<summary><b>All 27 merged PRs</b></summary>
 
 | PR | Change | Merged |
 | --- | --- | --- |
+| [#116](https://github.com/casosorg/casos/pull/116) | feat: strengthen Helm compatibility validation | 2026-08-01 |
+| [#115](https://github.com/casosorg/casos/pull/115) | fix: retry Helm downloads and extend install timeout | 2026-08-01 |
+| [#114](https://github.com/casosorg/casos/pull/114) | fix: stabilize app store install lifecycle | 2026-08-01 |
+| [#109](https://github.com/casosorg/casos/pull/109) | fix: harden app store install defaults | 2026-08-01 |
+| [#106](https://github.com/casosorg/casos/pull/106) | feat: provide default application access data plane | 2026-08-01 |
 | [#111](https://github.com/casosorg/casos/pull/111) | fix: make implicit image pull policy opt-in | 2026-07-25 |
 | [#108](https://github.com/casosorg/casos/pull/108) | fix: validate helm chart readiness and compatibility | 2026-07-25 |
 | [#105](https://github.com/casosorg/casos/pull/105) | fix: stabilize worker DNS bootstrap | 2026-07-25 |
@@ -110,16 +115,16 @@ read, trusted, and merged — **30 so far, across 7 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [casosorg/casos#116](https://github.com/casosorg/casos/pull/116) - feat: strengthen Helm compatibility validation (merged 2026-08-01)
+- [casosorg/casos#115](https://github.com/casosorg/casos/pull/115) - fix: retry Helm downloads and extend install timeout (merged 2026-08-01)
+- [casosorg/casos#114](https://github.com/casosorg/casos/pull/114) - fix: stabilize app store install lifecycle (merged 2026-08-01)
+- [casosorg/casos#109](https://github.com/casosorg/casos/pull/109) - fix: harden app store install defaults (merged 2026-08-01)
+- [casosorg/casos#106](https://github.com/casosorg/casos/pull/106) - feat: provide default application access data plane (merged 2026-08-01)
 - [vllm-project/vllm#41357](https://github.com/vllm-project/vllm/pull/41357) - [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits (merged 2026-07-29)
 - [casosorg/casos#111](https://github.com/casosorg/casos/pull/111) - fix: make implicit image pull policy opt-in (merged 2026-07-25)
 - [casosorg/casos#108](https://github.com/casosorg/casos/pull/108) - fix: validate helm chart readiness and compatibility (merged 2026-07-25)
 - [casosorg/casos#105](https://github.com/casosorg/casos/pull/105) - fix: stabilize worker DNS bootstrap (merged 2026-07-25)
 - [casosorg/casos#103](https://github.com/casosorg/casos/pull/103) - feat: persist helm install lifecycle (merged 2026-07-24)
-- [casosorg/casos#110](https://github.com/casosorg/casos/pull/110) - fix: pin cluster images in CI (merged 2026-07-23)
-- [casosorg/casos#102](https://github.com/casosorg/casos/pull/102) - feat: add managed flannel overlay networking (merged 2026-07-21)
-- [casosorg/kine#1](https://github.com/casosorg/kine/pull/1) - fix: keep Kine MySQL revisions ordered (merged 2026-07-19)
-- [casosorg/casos#96](https://github.com/casosorg/casos/pull/96) - fix: bootstrap local app store platform dependencies (merged 2026-07-09)
-- [casosorg/casos#97](https://github.com/casosorg/casos/pull/97) - fix: improve app store install flow diagnostics (merged 2026-07-08)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
