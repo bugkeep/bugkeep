@@ -16,7 +16,7 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-35-238636?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-36-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
@@ -46,19 +46,20 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **35 so far, across 7 upstream repositories**.
+read, trusted, and merged — **36 so far, across 7 upstream repositories**.
 
-### Upstream & Open Source · 35
+### Upstream & Open Source · 36
 
-#### [casosorg/casos](https://github.com/casosorg/casos) · 27 merged
+#### [casosorg/casos](https://github.com/casosorg/casos) · 28 merged
 
 > A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 <details>
-<summary><b>All 27 merged PRs</b></summary>
+<summary><b>All 28 merged PRs</b></summary>
 
 | PR | Change | Merged |
 | --- | --- | --- |
+| [#118](https://github.com/casosorg/casos/pull/118) | feat: add control plane egress policy | 2026-08-06 |
 | [#116](https://github.com/casosorg/casos/pull/116) | feat: strengthen Helm compatibility validation | 2026-08-01 |
 | [#115](https://github.com/casosorg/casos/pull/115) | fix: retry Helm downloads and extend install timeout | 2026-08-01 |
 | [#114](https://github.com/casosorg/casos/pull/114) | fix: stabilize app store install lifecycle | 2026-08-01 |
@@ -115,6 +116,7 @@ read, trusted, and merged — **35 so far, across 7 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [casosorg/casos#118](https://github.com/casosorg/casos/pull/118) - feat: add control plane egress policy (merged 2026-08-06)
 - [casosorg/casos#116](https://github.com/casosorg/casos/pull/116) - feat: strengthen Helm compatibility validation (merged 2026-08-01)
 - [casosorg/casos#115](https://github.com/casosorg/casos/pull/115) - fix: retry Helm downloads and extend install timeout (merged 2026-08-01)
 - [casosorg/casos#114](https://github.com/casosorg/casos/pull/114) - fix: stabilize app store install lifecycle (merged 2026-08-01)
@@ -124,7 +126,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#111](https://github.com/casosorg/casos/pull/111) - fix: make implicit image pull policy opt-in (merged 2026-07-25)
 - [casosorg/casos#108](https://github.com/casosorg/casos/pull/108) - fix: validate helm chart readiness and compatibility (merged 2026-07-25)
 - [casosorg/casos#105](https://github.com/casosorg/casos/pull/105) - fix: stabilize worker DNS bootstrap (merged 2026-07-25)
-- [casosorg/casos#103](https://github.com/casosorg/casos/pull/103) - feat: persist helm install lifecycle (merged 2026-07-24)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
