@@ -16,7 +16,7 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-39-238636?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-41-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
@@ -46,19 +46,21 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **39 so far, across 7 upstream repositories**.
+read, trusted, and merged — **41 so far, across 7 upstream repositories**.
 
-### Upstream & Open Source · 39
+### Upstream & Open Source · 41
 
-#### [casosorg/casos](https://github.com/casosorg/casos) · 31 merged
+#### [casosorg/casos](https://github.com/casosorg/casos) · 33 merged
 
 > A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 <details>
-<summary><b>All 31 merged PRs</b></summary>
+<summary><b>All 33 merged PRs</b></summary>
 
 | PR | Change | Merged |
 | --- | --- | --- |
+| [#147](https://github.com/casosorg/casos/pull/147) | ci: create the release as a draft from the start | 2026-08-15 |
+| [#146](https://github.com/casosorg/casos/pull/146) | feat: add one-click installers | 2026-08-15 |
 | [#142](https://github.com/casosorg/casos/pull/142) | fix: repair Helm release upgrade flow | 2026-08-13 |
 | [#140](https://github.com/casosorg/casos/pull/140) | fix: only rewrite a WSL worker's apiserver address when it is unreachable | 2026-08-09 |
 | [#141](https://github.com/casosorg/casos/pull/141) | fix: fix failed UI test about "Add Local WSL" button | 2026-08-09 |
@@ -119,6 +121,8 @@ read, trusted, and merged — **39 so far, across 7 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [casosorg/casos#147](https://github.com/casosorg/casos/pull/147) - ci: create the release as a draft from the start (merged 2026-08-15)
+- [casosorg/casos#146](https://github.com/casosorg/casos/pull/146) - feat: add one-click installers (merged 2026-08-15)
 - [casosorg/casos#142](https://github.com/casosorg/casos/pull/142) - fix: repair Helm release upgrade flow (merged 2026-08-13)
 - [casosorg/casos#140](https://github.com/casosorg/casos/pull/140) - fix: only rewrite a WSL worker's apiserver address when it is unreachable (merged 2026-08-09)
 - [casosorg/casos#141](https://github.com/casosorg/casos/pull/141) - fix: fix failed UI test about "Add Local WSL" button (merged 2026-08-09)
@@ -127,8 +131,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#115](https://github.com/casosorg/casos/pull/115) - fix: retry Helm downloads and extend install timeout (merged 2026-08-01)
 - [casosorg/casos#114](https://github.com/casosorg/casos/pull/114) - fix: stabilize app store install lifecycle (merged 2026-08-01)
 - [casosorg/casos#109](https://github.com/casosorg/casos/pull/109) - fix: harden app store install defaults (merged 2026-08-01)
-- [casosorg/casos#106](https://github.com/casosorg/casos/pull/106) - feat: provide default application access data plane (merged 2026-08-01)
-- [vllm-project/vllm#41357](https://github.com/vllm-project/vllm/pull/41357) - [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits (merged 2026-07-29)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
