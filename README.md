@@ -16,7 +16,7 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-41-238636?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-45-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
@@ -46,19 +46,23 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **41 so far, across 7 upstream repositories**.
+read, trusted, and merged — **45 so far, across 7 upstream repositories**.
 
-### Upstream & Open Source · 41
+### Upstream & Open Source · 45
 
-#### [casosorg/casos](https://github.com/casosorg/casos) · 33 merged
+#### [casosorg/casos](https://github.com/casosorg/casos) · 37 merged
 
 > A Kubernetes-flavored local cloud OS, and my main upstream: App Store installs, worker nodes, certificates, RBAC, Services, storage, and the CI that guards them.
 
 <details>
-<summary><b>All 33 merged PRs</b></summary>
+<summary><b>All 37 merged PRs</b></summary>
 
 | PR | Change | Merged |
 | --- | --- | --- |
+| [#159](https://github.com/casosorg/casos/pull/159) | fix: enable gzip for static frontend assets | 2026-08-18 |
+| [#158](https://github.com/casosorg/casos/pull/158) | feat: add first-run setup checklist | 2026-08-18 |
+| [#154](https://github.com/casosorg/casos/pull/154) | fix: replace machine form tooltip placeholders | 2026-08-18 |
+| [#152](https://github.com/casosorg/casos/pull/152) | fix: report incomplete cluster health | 2026-08-18 |
 | [#147](https://github.com/casosorg/casos/pull/147) | ci: create the release as a draft from the start | 2026-08-15 |
 | [#146](https://github.com/casosorg/casos/pull/146) | feat: add one-click installers | 2026-08-15 |
 | [#142](https://github.com/casosorg/casos/pull/142) | fix: repair Helm release upgrade flow | 2026-08-13 |
@@ -121,16 +125,16 @@ read, trusted, and merged — **41 so far, across 7 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [casosorg/casos#159](https://github.com/casosorg/casos/pull/159) - fix: enable gzip for static frontend assets (merged 2026-08-18)
+- [casosorg/casos#158](https://github.com/casosorg/casos/pull/158) - feat: add first-run setup checklist (merged 2026-08-18)
+- [casosorg/casos#154](https://github.com/casosorg/casos/pull/154) - fix: replace machine form tooltip placeholders (merged 2026-08-18)
+- [casosorg/casos#152](https://github.com/casosorg/casos/pull/152) - fix: report incomplete cluster health (merged 2026-08-18)
 - [casosorg/casos#147](https://github.com/casosorg/casos/pull/147) - ci: create the release as a draft from the start (merged 2026-08-15)
 - [casosorg/casos#146](https://github.com/casosorg/casos/pull/146) - feat: add one-click installers (merged 2026-08-15)
 - [casosorg/casos#142](https://github.com/casosorg/casos/pull/142) - fix: repair Helm release upgrade flow (merged 2026-08-13)
 - [casosorg/casos#140](https://github.com/casosorg/casos/pull/140) - fix: only rewrite a WSL worker's apiserver address when it is unreachable (merged 2026-08-09)
 - [casosorg/casos#141](https://github.com/casosorg/casos/pull/141) - fix: fix failed UI test about "Add Local WSL" button (merged 2026-08-09)
 - [casosorg/casos#118](https://github.com/casosorg/casos/pull/118) - feat: add control plane egress policy (merged 2026-08-06)
-- [casosorg/casos#116](https://github.com/casosorg/casos/pull/116) - feat: strengthen Helm compatibility validation (merged 2026-08-01)
-- [casosorg/casos#115](https://github.com/casosorg/casos/pull/115) - fix: retry Helm downloads and extend install timeout (merged 2026-08-01)
-- [casosorg/casos#114](https://github.com/casosorg/casos/pull/114) - fix: stabilize app store install lifecycle (merged 2026-08-01)
-- [casosorg/casos#109](https://github.com/casosorg/casos/pull/109) - fix: harden app store install defaults (merged 2026-08-01)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
