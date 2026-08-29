@@ -16,8 +16,8 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-45-238636?style=flat-square&logo=github&logoColor=white)
-![upstream repos](https://img.shields.io/badge/upstream_repos-7-1F6FEB?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-46-238636?style=flat-square&logo=github&logoColor=white)
+![upstream repos](https://img.shields.io/badge/upstream_repos-8-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
 
@@ -46,9 +46,9 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **45 so far, across 7 upstream repositories**.
+read, trusted, and merged — **46 so far, across 8 upstream repositories**.
 
-### Upstream & Open Source · 45
+### Upstream & Open Source · 46
 
 #### [casosorg/casos](https://github.com/casosorg/casos) · 37 merged
 
@@ -109,12 +109,13 @@ read, trusted, and merged — **45 so far, across 7 upstream repositories**.
 | [#7807](https://github.com/AstrBotDevs/AstrBot/pull/7807) | fix(core): downscale oversized images | 2026-04-26 |
 | [#7751](https://github.com/AstrBotDevs/AstrBot/pull/7751) | fix: prevent path traversal in file uploads | 2026-04-24 |
 
-#### One-Patch Stops · 5
+#### One-Patch Stops · 6
 
 > Small, sharp fixes in tools I actually use.
 
 | Repository | PR | Change | Merged |
 | --- | --- | --- | --- |
+| [vllm-project/semantic-router](https://github.com/vllm-project/semantic-router) | [#3085](https://github.com/vllm-project/semantic-router/pull/3085) | [Bug] Preserve the prompt guard mapping default | 2026-08-29 |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | [#41357](https://github.com/vllm-project/vllm/pull/41357) | [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits | 2026-07-29 |
 | [casosorg/kine](https://github.com/casosorg/kine) | [#1](https://github.com/casosorg/kine/pull/1) | fix: keep Kine MySQL revisions ordered | 2026-07-19 |
 | [MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli) | [#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) | fix(acp): replay session history on load | 2026-05-28 |
@@ -125,6 +126,7 @@ read, trusted, and merged — **45 so far, across 7 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [vllm-project/semantic-router#3085](https://github.com/vllm-project/semantic-router/pull/3085) - [Bug] Preserve the prompt guard mapping default (merged 2026-08-29)
 - [casosorg/casos#159](https://github.com/casosorg/casos/pull/159) - fix: enable gzip for static frontend assets (merged 2026-08-18)
 - [casosorg/casos#158](https://github.com/casosorg/casos/pull/158) - feat: add first-run setup checklist (merged 2026-08-18)
 - [casosorg/casos#154](https://github.com/casosorg/casos/pull/154) - fix: replace machine form tooltip placeholders (merged 2026-08-18)
@@ -134,7 +136,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#142](https://github.com/casosorg/casos/pull/142) - fix: repair Helm release upgrade flow (merged 2026-08-13)
 - [casosorg/casos#140](https://github.com/casosorg/casos/pull/140) - fix: only rewrite a WSL worker's apiserver address when it is unreachable (merged 2026-08-09)
 - [casosorg/casos#141](https://github.com/casosorg/casos/pull/141) - fix: fix failed UI test about "Add Local WSL" button (merged 2026-08-09)
-- [casosorg/casos#118](https://github.com/casosorg/casos/pull/118) - feat: add control plane egress policy (merged 2026-08-06)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
