@@ -16,8 +16,8 @@ turns a feature into something maintainers can actually merge.
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 
 <!--START_SECTION:merged_pr_stats-->
-![upstream PRs](https://img.shields.io/badge/upstream_PRs-47-238636?style=flat-square&logo=github&logoColor=white)
-![upstream repos](https://img.shields.io/badge/upstream_repos-8-1F6FEB?style=flat-square&logo=github&logoColor=white)
+![upstream PRs](https://img.shields.io/badge/upstream_PRs-48-238636?style=flat-square&logo=github&logoColor=white)
+![upstream repos](https://img.shields.io/badge/upstream_repos-9-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
 ![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
 
@@ -46,9 +46,9 @@ turns a feature into something maintainers can actually merge.
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
-read, trusted, and merged — **47 so far, across 8 upstream repositories**.
+read, trusted, and merged — **48 so far, across 9 upstream repositories**.
 
-### Upstream & Open Source · 47
+### Upstream & Open Source · 48
 
 #### [casosorg/casos](https://github.com/casosorg/casos) · 37 merged
 
@@ -116,12 +116,13 @@ read, trusted, and merged — **47 so far, across 8 upstream repositories**.
 | [#3115](https://github.com/vllm-project/semantic-router/pull/3115) | [Test] Cover OpenAI system cache_control translation | 2026-09-01 |
 | [#3085](https://github.com/vllm-project/semantic-router/pull/3085) | [Bug] Preserve the prompt guard mapping default | 2026-08-29 |
 
-#### One-Patch Stops · 5
+#### One-Patch Stops · 6
 
 > Small, sharp fixes in tools I actually use.
 
 | Repository | PR | Change | Merged |
 | --- | --- | --- | --- |
+| [kvcache-ai/Mooncake](https://github.com/kvcache-ai/Mooncake) | [#3836](https://github.com/kvcache-ai/Mooncake/pull/3836) | [TENT] Add configuration lifecycle foundation | 2026-09-08 |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | [#41357](https://github.com/vllm-project/vllm/pull/41357) | [Bugfix] Prevent stale multiproc RPC deadlines from becoming unbounded waits | 2026-07-29 |
 | [casosorg/kine](https://github.com/casosorg/kine) | [#1](https://github.com/casosorg/kine/pull/1) | fix: keep Kine MySQL revisions ordered | 2026-07-19 |
 | [MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli) | [#2132](https://github.com/MoonshotAI/kimi-cli/pull/2132) | fix(acp): replay session history on load | 2026-05-28 |
@@ -132,6 +133,7 @@ read, trusted, and merged — **47 so far, across 8 upstream repositories**.
 
 _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep/bugkeep/blob/master/.github/workflows/merged-prs.yml)._
 
+- [kvcache-ai/Mooncake#3836](https://github.com/kvcache-ai/Mooncake/pull/3836) - [TENT] Add configuration lifecycle foundation (merged 2026-09-08)
 - [vllm-project/semantic-router#3115](https://github.com/vllm-project/semantic-router/pull/3115) - [Test] Cover OpenAI system cache_control translation (merged 2026-09-01)
 - [vllm-project/semantic-router#3085](https://github.com/vllm-project/semantic-router/pull/3085) - [Bug] Preserve the prompt guard mapping default (merged 2026-08-29)
 - [casosorg/casos#159](https://github.com/casosorg/casos/pull/159) - fix: enable gzip for static frontend assets (merged 2026-08-18)
@@ -141,7 +143,6 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#147](https://github.com/casosorg/casos/pull/147) - ci: create the release as a draft from the start (merged 2026-08-15)
 - [casosorg/casos#146](https://github.com/casosorg/casos/pull/146) - feat: add one-click installers (merged 2026-08-15)
 - [casosorg/casos#142](https://github.com/casosorg/casos/pull/142) - fix: repair Helm release upgrade flow (merged 2026-08-13)
-- [casosorg/casos#140](https://github.com/casosorg/casos/pull/140) - fix: only rewrite a WSL worker's apiserver address when it is unreachable (merged 2026-08-09)
 <!--END_SECTION:merged_prs_showcase-->
 
 ---
