@@ -25,6 +25,8 @@ turns a feature into something maintainers can actually merge.
 
 ---
 
+[个人博客与成就记录](https://wzy-personal-notes.franklin20011223.chatgpt.site) · [Ascend C 学习打卡](https://wzy-personal-notes.franklin20011223.chatgpt.site/learning) · [竞赛荣誉](https://wzy-personal-notes.franklin20011223.chatgpt.site/#awards)
+
 ## What I Keep Coming Back To
 
 - **Platform backends**: APIs that manage real cluster resources, not just rows in a database.
