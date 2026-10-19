@@ -4,6 +4,7 @@
 - 💻 Tools: Go, Python, JavaScript, Kubernetes, and MySQL.
 - 🌱 Learning: Ascend C operator development and performance optimization.
 - 📝 Blog: [AI Infra & Agent Notes](https://wzy-personal-notes.franklin20011223.chatgpt.site)
+- 📫 Email: [1921817430@qq.com](mailto:1921817430@qq.com)
 
 ---
 
