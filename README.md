@@ -1,4 +1,4 @@
-## 👋 Hi, I'm Zhenyu Wang (王镇宇)
+## 👋 Hi
 
 - 🤖 Focus: AI Infra, Agent Infra, and backend systems.
 - 💻 Tools: Go, Python, JavaScript, Kubernetes, and MySQL.
