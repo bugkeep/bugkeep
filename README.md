@@ -1,50 +1,29 @@
-<div align="center">
+## 👋 Hi, I'm Zhenyu Wang (王镇宇)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:141E30,100:243B55&height=200&section=header&text=bugkeep&fontSize=56&fontColor=F5F6FA&fontAlignY=40&desc=cloud-native%20backends%20%C2%B7%20kubernetes-shaped%20systems%20%C2%B7%20patches%20that%20last&descSize=15&descAlignY=62" width="100%" />
+- 🤖 Focus: AI Infra, Agent Infra, and backend systems.
+- 💻 Tools: Go, Python, JavaScript, Kubernetes, and MySQL.
+- 🌱 Learning: Ascend C operator development and performance optimization.
+- 📝 Blog: [AI Infra & Agent Notes](https://wzy-personal-notes.franklin20011223.chatgpt.site)
 
-I like backend work that gets close to real infrastructure: Kubernetes
-resources, auth boundaries, storage, networking, CI, and the quiet glue that
-turns a feature into something maintainers can actually merge.
+---
 
-![Go](https://img.shields.io/badge/-Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Helm](https://img.shields.io/badge/-Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
-![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+## 🛠️ Currently Working On
+
+- 🎨 Building [ai-draw](https://github.com/bugkeep/ai-draw), a conversational drawing agent with Excalidraw.
+- 🧩 Exploring agent memory, context management, and tool calling.
+- 🔧 Contributing to open-source infrastructure and developer tools.
+
+[Learning Notes](https://wzy-personal-notes.franklin20011223.chatgpt.site/learning) · [Achievements](https://wzy-personal-notes.franklin20011223.chatgpt.site/achievements)
+
+---
+
+<details>
+<summary>📦 Open-source contributions</summary>
 
 <!--START_SECTION:merged_pr_stats-->
 ![upstream PRs](https://img.shields.io/badge/upstream_PRs-48-238636?style=flat-square&logo=github&logoColor=white)
 ![upstream repos](https://img.shields.io/badge/upstream_repos-9-1F6FEB?style=flat-square&logo=github&logoColor=white)
 <!--END_SECTION:merged_pr_stats-->
-![building since](https://img.shields.io/badge/building_since-2023-8957E5?style=flat-square&logo=github&logoColor=white)
-
-</div>
-
----
-
-[个人博客与成就记录](https://wzy-personal-notes.franklin20011223.chatgpt.site) · [Ascend C 学习打卡](https://wzy-personal-notes.franklin20011223.chatgpt.site/learning) · [竞赛荣誉](https://wzy-personal-notes.franklin20011223.chatgpt.site/#awards)
-
-## What I Keep Coming Back To
-
-- **Platform backends**: APIs that manage real cluster resources, not just rows in a database.
-- **Kubernetes edges**: Services, Ingress, cert-manager, RBAC, StatefulSets, storage, pod logs, and exec paths.
-- **Open-source maintenance**: small fixes with a reproduction, a reason, and tests when behavior can regress.
-- **Agent infrastructure**: memory, retrieval, tool calls, and the backend paths agents need when they leave the demo.
-
-## How I Work
-
-- I read the surrounding code before touching the line that looks guilty.
-- I prefer boring patches in the best sense: narrow, explainable, and easy to review.
-- I enjoy the part where a vague bug becomes a concrete failing path.
-- I tend to build bigger ideas in a fork first, then upstream the pieces that have earned their shape.
-- I care about the last 20%: names, error paths, tests, and whether the next maintainer can follow the trail.
-
----
-
-## Merged Pull Requests
 
 <!--START_SECTION:merged_prs_showcase-->
 The number I watch on GitHub is not stars. It is the patches a maintainer
@@ -147,26 +126,4 @@ _Updated nightly by [a small GitHub Actions workflow](https://github.com/bugkeep
 - [casosorg/casos#142](https://github.com/casosorg/casos/pull/142) - fix: repair Helm release upgrade flow (merged 2026-08-13)
 <!--END_SECTION:merged_prs_showcase-->
 
----
-
-## Reading Grounds
-
-| Repository | Why it stays open |
-| --- | --- |
-| [TencentDB Agent Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) | Layered memory, hybrid retrieval, and agent memory as backend infrastructure. |
-| [casdoor/casdoor](https://github.com/casdoor/casdoor) | Auth, OIDC, and identity systems — platform backends eventually meet permissions. |
-| [apache/casbin-pycasbin](https://github.com/bugkeep/casbin-pycasbin) | Policy-engine reading ground for RBAC details and permission-model thinking. |
-
-## A Note
-
-I keep this profile less like a CV and more like a workbench. The interesting
-part is not a label; it is the trail of small decisions that make a system less
-mysterious than it was yesterday.
-
-<div align="center">
-
-![contribution snake](https://raw.githubusercontent.com/bugkeep/bugkeep/output/github-contribution-grid-snake.svg)
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:243B55,100:141E30&height=110&section=footer" width="100%" />
-
-</div>
+</details>
